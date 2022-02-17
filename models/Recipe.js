@@ -29,11 +29,11 @@ Recipe.init(
       allowNull: false,
     },
     recipe_ingredients: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
+      type: DataTypes.JSON,
       allowNull: false,
     },
     recipe_method: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
+      type: DataTypes.JSON,
       allowNull: false,
     },
     user_id: {
@@ -42,14 +42,7 @@ Recipe.init(
         model: "user",
         key: "id",
       },
-    },
-    comment_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "user",
-        key: "id",
-      },
-    },
+    }
   },
   {
     sequelize,
