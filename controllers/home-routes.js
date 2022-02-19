@@ -1,3 +1,3 @@
 const router = require("express").Router();
-const { User, Recipe, Comment } = require("../models");
+const { User, Recipe, Comments } = require("../models");
 module.exports = router;
