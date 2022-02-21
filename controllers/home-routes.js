@@ -4,7 +4,7 @@ module.exports = router;
 
 router.get("/", async (req, res) => {
     try {
-      res.render("dashboard")
+      res.render("login")
     } catch (err) {
       res.sendStatus(500).send(err);
     }
