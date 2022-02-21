@@ -1,0 +1,81 @@
+.add-recipe-container {
+  border: 5px solid blueviolet;
+  border-radius: 1em;
+}
+
+.add-recipe-header {
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1em 2em;
+}
+
+.add-recipe-form {
+  padding: 2em;
+}
+
+input {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-recipe {
+  width: 100%;
+  background-color: #04aa6d;
+  color: white;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-recipe-summary {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  resize: vertical;
+  height: 5em;
+}
+
+.add-recipe-method-step {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  resize: vertical;
+  height: 5em;
+}
+
+.add-ingredient {
+  width: 20%;
+  background-color: blueviolet;
+  color: white;
+  padding: 1em 1.2em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-method-step {
+  width: 20%;
+  background-color: blueviolet;
+  color: white;
+  padding: 1em 1.2em;
+  cursor: pointer;
+  border-radius: 4px;
+}
