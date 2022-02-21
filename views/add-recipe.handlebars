@@ -1,0 +1,52 @@
+<div class="add-recipe-container">
+  <section class="add-recipe-header">
+    <h1>Add a new recipe</h1>
+    <p>Fill in all of the below information and share your recipe with everyone!</p>
+  </section>
+  <section class="add-recipe-form">
+    <input
+      type="text"
+      class="add-recipe-name"
+      id="add-recipe-name"
+      placeholder="Recipe name..."
+    />
+    <input
+      type="number"
+      class="add-recipe-cooking-time"
+      id="add-recipe-cooking-time"
+      placeholder="Recipe cooking time in minutes..."
+    />
+    <input
+      type="number"
+      class="add-recipe-serves"
+      id="add-recipe-serves"
+      placeholder="Recipe serves..."
+    />
+    <textarea
+      type="text"
+      class="add-recipe-summary"
+      id="add-recipe-summary"
+      placeholder="Recipe summary..."
+    ></textarea>
+    <div class="recipe-ingredients-container">
+      <input
+        type="text"
+        class="add-recipe-ingredients"
+        id="add-recipe-ingredients"
+        placeholder="Recipe ingredient..."
+      />
+    </div>
+    <button class="add-ingredient">Add another ingredient</button>
+    <div class="recipe-method-container">
+      <textarea
+        class="add-recipe-method-step"
+        id="add-recipe-method-step"
+        placeholder="Recipe method step one..."
+      ></textarea>
+    </div>
+    <button class="add-method-step">Add another method step</button>
+    <button class="submit-recipe">Submit recipe</button>
+  </section>
+</div>
+
+<script src="/js/add-recipe.js"></script>
