@@ -18,6 +18,14 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+router.get("/add-recipe", async (req, res) => {
+  try {
+    res.render("add-recipe");
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
+
 // Get Single Recipe
 router.get("/:id", async (req, res) => {
   try {
@@ -41,13 +49,5 @@ router.get("/:id", async (req, res) => {
     });
   } catch (err) {
     res.status(500).send(err);
-  }
-});
-
-router.get("/add-recipe", async (req, res) => {
-  try {
-    res.render("add-recipe");
-  } catch (err) {
-    res.sendStatus(500).send(err);
   }
 });
