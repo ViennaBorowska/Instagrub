@@ -1,20 +1,52 @@
-<div class="single-recipe-card">
-
-  <div class="recipe-header">
-    <h3 class="recipe-title">{{this.title}}</h3>
-    <h4 class="recipe-title">Written by
-      {{user.first_name}}
-      {{user.last_name}}</h4>
-    <div class="recipe-info">
-      <h5 class="recipe-info-box">
-        Cooking time:
-        {{this.recipe_cooking_time}}
-        minutes</h5>
-      <h5 class="recipe-info-box"> Serves {{this.recipe_serves}}</h5>
+<div class="single-recipe-box">
+  <section class="recipe-lhs">
+    <div class="recipe-image-box">
+      <img
+        class="recipe-image"
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/goulash-1640024815.jpeg?crop=1.00xw:0.752xh;0,0.115xh&resize=1200:*"
+        alt="Recipe image"
+      />
     </div>
-  </div>
-  <p class="recipe-body">
+    <div class="ingredients">
+      <h4>INGREDIENTS</h4>
+      <ul class="ingredients-list">
+        {{#each this.recipe_ingredients}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  <section class="recipe-rhs">
+    <div class="recipe-header">
+      <h1 class="recipe-title">{{this.recipe_title}}</h1>
+      <h3 class="recipe-author">By
+        {{user.first_name}}</h3>
+      <br />
+      <div class="recipe-info">
+        <h5 class="recipe-info-box">
+          Cooking time:
+          {{this.recipe_cooking_time}}
+          minutes</h5>
+        <h5 class="recipe-info-box"> Serves {{this.recipe_serves}}</h5>
+      </div>
+    </div>
+    <br />
+    <div class="recipe-summary">
+      <p class="recipe-summary-body">
+        <h4>SUMMARY</h4>
+        {{this.recipe_summary}}
+      </p>
+    </div>
+    <br />
+    <div class="recipe-method">
+      <h4>METHOD</h4>
+      <ul class="method-list">
+        {{#each this.recipe_method}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
 
-  </p>
+  </section>
 
 </div>
