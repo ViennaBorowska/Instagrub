@@ -2,9 +2,9 @@ const router = require("express").Router();
 const { User, Recipe, Comments } = require("../models");
 module.exports = router;
 
-router.get("/", async (req, res) => {
+router.get("/login", async (req, res) => {
   try {
-    res.render("login");
+    res.render("login", { logged_in: req.session.logged_in });
   } catch (err) {
     res.sendStatus(500).send(err);
   }
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
 router.get("/signup", async (req, res) => {
   try {
-    res.render("signup");
+    res.render("signup", { logged_in: req.session.logged_in });
   } catch (err) {
     res.sendStatus(500).send(err);
   }

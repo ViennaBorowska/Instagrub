@@ -109,7 +109,7 @@
   .hamburger {
     width: 100%;
     height: 100%;
-    padding: 6px;
+    padding: 7px;
     cursor: pointer;
     stroke: rgb(0, 0, 0);
     transition: ease-in-out 0.25s;
