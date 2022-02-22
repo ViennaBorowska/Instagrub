@@ -52,7 +52,6 @@ body {
   flex-basis: auto;
   height: 100%;
   width: 100%;
-  background-color: red;
   object-fit: cover;
 }
 
