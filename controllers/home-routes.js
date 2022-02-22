@@ -18,7 +18,6 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-
 router.get("/:id", async (req, res) => {
   try {
     const userFromDb = await User.findByPk(req.params.id, {
