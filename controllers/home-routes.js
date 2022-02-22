@@ -3,6 +3,14 @@ const { User, Recipe, Comments } = require("../models");
 module.exports = router;
 
 router.get("/", async (req, res) => {
+    try {
+      res.render("login")
+    } catch (err) {
+      res.sendStatus(500).send(err);
+    }
+});
+
+router.get("/dashboard", async (req, res) => {
   try {
     res.render("dashboard");
   } catch (err) {
