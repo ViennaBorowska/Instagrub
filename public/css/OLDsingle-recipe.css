@@ -3,31 +3,36 @@ body {
   line-height: 2;
 }
 
-h4 {
-  padding-bottom: 5px;
-  text-decoration: underline dashed chocolate;
-}
-
-ul {
-  list-style: none;
-}
-
 .single-recipe-box {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   border: 3px solid black;
   border-radius: 1em;
   margin: 20px;
   padding: 20px;
   background-color: silver;
   box-shadow: 0px 13px 10px black;
-  height: 100%;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
 }
 
-.recipe-top {
-  display: flex;
-  flex-direction: row;
+.recipe-rhs {
+  border: 3px solid black;
+  flex: 0 0 30%;
+  padding: 20px;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.recipt-lhs {
+  border: 3px solid black;
+  flex: 0 0 70%;
+  padding: 20px;
+  justify-content: center;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -36,7 +41,6 @@ ul {
   width: 400px;
   border: 3px solid black;
   margin-bottom: 30px;
-  margin-right: 50px;
 }
 
 .recipe-image {
@@ -45,19 +49,22 @@ ul {
   height: 100%;
 }
 
-.top-rhs {
-  display: flex;
-  flex-direction: column;
+.ingredients {
+  padding-top: 20px;
+  border: 3px dashed black;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
 }
 
 .recipe-title {
   font-size: 75px;
 }
-
 .recipe-info {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
 }
 
 .recipe-info-box {
@@ -75,19 +82,13 @@ ul {
   padding: 5px;
 }
 
-.recipe-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.ingredients {
-  border: 3px dashed black;
-  padding: 10px;
-}
-
 .recipe-method {
   border: 2px solid black;
   width: 100%;
   padding: 5px;
+}
+
+h4 {
+  padding-bottom: 5px;
+  text-decoration: underline dashed chocolate;
 }
