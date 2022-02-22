@@ -8,6 +8,7 @@ const addIngretientInput = (event) => {
   newIngredientsInput.className = "add-recipe-ingredients";
   newIngredientsInput.id = "add-recipe-ingredients";
   newIngredientsInput.placeholder = "Recipe ingredient...";
+  newIngredientsInput.name = "add-recipe-ingredients";
 
   ingredientsContainer.appendChild(newIngredientsInput);
 };
@@ -19,18 +20,13 @@ const addMethodInput = (event) => {
   newMethodInput.className = "add-recipe-method-step";
   newMethodInput.id = "add-recipe-method-step";
   newMethodInput.placeholder = "Next recipe method step...";
+  newMethodInput.name = "add-recipe-method-step";
 
   methodsContainer.appendChild(newMethodInput);
 };
 
 const newRecipeHandler = (event) => {
   event.preventDefault();
-
-  const ingredientsContainer = document.querySelector(
-    ".recipe-ingredients-container"
-  ).elements;
-
-  console.log(ingredientsContainer);
 
   const recipeIngredientsArr = [];
   const recipeMethodsArr = [];
@@ -45,15 +41,17 @@ const newRecipeHandler = (event) => {
   const recipeSummary = document
     .querySelector(".add-recipe-summary")
     .value.trim();
-  // const recipeIngredients = document
-  //   .querySelector(".add-recipe-ingredients")
-  //   .value.trim();
-  // const recipeMethods = document
-  //   .querySelector(".add-recipe-method-step")
-  //   .value.trim();
+  var ingredientInput = document.getElementsByName("add-recipe-ingredients");
+  for (var i = 0; i < ingredientInput.length; i++) {
+    var a = ingredientInput[i].value.trim();
+    recipeIngredientsArr.push(a);
+  }
 
-  // recipeIngredientsArr.push(recipeIngredients);
-  // recipeMethodsArr.push(recipeMethods);
+  var methodInput = document.getElementsByName("add-recipe-method-step");
+  for (var i = 0; i < methodInput.length; i++) {
+    var a = methodInput[i].value.trim();
+    recipeMethodsArr.push(a);
+  }
 
   console.log(recipeName);
   console.log(recipeCookingTime);
