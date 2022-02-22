@@ -1,35 +1,35 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 .body-container {
-    
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background-color: blueviolet;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: blueviolet;
+  padding: 10px;
 }
 
 .link-container {
-    display: flex;
-    height: 50px;
+  display: flex;
+  height: 50px;
 }
 
 .link-container > * {
-    padding: 10px;
+  padding: 10px;
 }
 
 .body-container {
-    width: 100%;
-    height: 100vh;
-    background-color: grey;
+  width: 100%;
+  height: 100vh;
+  background-color: grey;
+  /*Added by Sampreeti */
+  padding: 50px;
 }
