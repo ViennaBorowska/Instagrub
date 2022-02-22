@@ -1,33 +1,51 @@
 <h1>Profile</h1>
 <section class="content">
-    <section id="profile_image" class="content-section">
-        
-            <img class="float-left" src="/uploads/{{user_image}}" alt="User Profile">
-        
-        <!--<a href="/api/users/1">Upload Profile Picture</a>-->
-        <form method="POST" action="/api/profile-image" id="profile-image-form" enctype="multipart/form-data">
-            <div>
-                <input type="file" name="profile-file" id="profile-file" value="Upload profile picture"/>
-            </div>
-            <input type="hidden" name="userId" value="1"/>
-        </form>
-    </section>
+  <section id="profile_image" class="content-section">
 
-    <section id="profile_bio" class="content-section-bio">
-        <p>{{first_name}} {{last_name}}</p>
-        <div>
-            <p>{{user_bio}}</p>
-        </div>
-    </section>
-    {{#each recipes as |recipe|}}
+    <img class="float-left" src="/uploads/{{user_image}}" alt="User Profile" />
+
+    <!--<a href="/api/users/1">Upload Profile Picture</a>-->
+    <form
+      method="POST"
+      action="/api/profile-image"
+      id="profile-image-form"
+      enctype="multipart/form-data"
+    >
+      <div>
+        <input
+          type="file"
+          name="profile-file"
+          id="profile-file"
+          value="Upload profile picture"
+        />
+      </div>
+      <input type="hidden" name="userId" value="1" />
+    </form>
+  </section>
+
+  <section id="profile_bio" class="content-section-bio">
+    <p>{{first_name}} {{last_name}}</p>
+    <div>
+      <p>{{user_bio}}</p>
+    </div>
+  </section>
+  {{#each recipes as |recipe|}}
     <section id="profile_image" class="recipe-section">
-        <img class="float-left" src="/images/sample-profile.jpg" alt="User Profile">
-        <p>{{recipe.recipe_title}}</p>
+      <img
+        class="float-left"
+        src="/images/sample-profile.jpg"
+        alt="User Profile"
+      />
+      <p>{{recipe.recipe_title}}</p>
     </section>
     <section id="profile_image" class="recipe-section">
-        <img class="float-left" src="/images/sample-profile.jpg" alt="User Profile">
-        <p>{{recipe.recipe_title}}</p>
+      <img
+        class="float-left"
+        src="/images/sample-profile.jpg"
+        alt="User Profile"
+      />
+      <p>{{recipe.recipe_title}}</p>
     </section>
-    {{/each}}
+  {{/each}}
 </section>
 <script src="/js/upload-image.js"></script>
