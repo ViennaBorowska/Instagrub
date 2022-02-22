@@ -71,6 +71,12 @@ router.get("/recipe/:id", async (req, res) => {
           "recipe_ingredients",
           "recipe_method",
         ],
+        include: [
+          {
+            model: User,
+            attributes: ["username"],
+          },
+        ],
       })
     ).get({ plain: true });
     res.render("single-recipe", {
@@ -81,4 +87,3 @@ router.get("/recipe/:id", async (req, res) => {
     res.status(500).send(err);
   }
 });
-

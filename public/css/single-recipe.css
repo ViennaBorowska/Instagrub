@@ -3,35 +3,61 @@ body {
   line-height: 2;
 }
 
+h4 {
+  padding-bottom: 0.25px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+ul li {
+  list-style-image: url("../images/ingredient-list-bullet.png");
+  list-style-position: inside;
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+}
+
+ol li::before {
+  content: "0" counter(my-counter);
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-family: "Abril Fatface", serif;
+  line-height: 1;
+}
+
+ol li {
+  counter-increment: my-counter;
+  display: flex;
+  width: 50%;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: chocolate;
+}
+
 .single-recipe-box {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   border: 3px solid black;
   border-radius: 1em;
-  padding: 50px;
+  margin: 20px;
+  padding: 20px;
   background-color: silver;
   box-shadow: 0px 13px 10px black;
   height: 100%;
-  width: 100%;
+  width: 90%;
 }
 
-.recipe-rhs {
-  border: 3px solid black;
-  flex: 0 0 30%;
-  padding: 20px;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  margin-left: 50px;
-}
-
-.recipt-lhs {
-  border: 3px solid black;
-  flex: 0 0 70%;
-  padding: 20px;
-  justify-content: center;
-  align-items: stretch;
+.recipe-top {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
@@ -40,6 +66,7 @@ body {
   width: 400px;
   border: 3px solid black;
   margin-bottom: 30px;
+  margin-right: 50px;
 }
 
 .recipe-image {
@@ -48,22 +75,23 @@ body {
   height: 100%;
 }
 
-.ingredients {
-  padding-top: 20px;
-  border: 3px dashed black;
-  padding: 10px;
-}
-
-ul {
-  list-style: none;
+.top-rhs {
+  display: flex;
+  flex-direction: column;
 }
 
 .recipe-title {
   font-size: 75px;
 }
+
+.recipe-author {
+  font-style: italic;
+}
+
 .recipe-info {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 }
 
 .recipe-info-box {
@@ -79,15 +107,50 @@ ul {
   border: 2px solid black;
   width: 100%;
   padding: 5px;
+  font-style: italic;
+}
+
+.recipe-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.ingredients {
+  border: 3px dashed black;
+  padding: 10px;
+  width: 400px;
+  margin-right: 50px;
 }
 
 .recipe-method {
   border: 2px solid black;
-  width: 100%;
+  width: 50%;
   padding: 5px;
 }
 
-h4 {
-  padding-bottom: 5px;
-  text-decoration: underline dashed chocolate;
+@media only screen and (max-width: 768px) {
+  .recipe-top {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .recipe-bottom {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .recipe-image-box {
+    margin-right: 0px;
+  }
+
+  h3,
+  h4,
+  ol,
+  ul,
+  .recipe-info,
+  .ingredients {
+    align-items: center;
+  }
 }
