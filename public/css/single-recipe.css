@@ -4,12 +4,40 @@ body {
 }
 
 h4 {
-  padding-bottom: 5px;
-  text-decoration: underline dashed chocolate;
+  padding-bottom: 0.25px;
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  width: fit-content;
 }
 
 ul {
   list-style: none;
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+}
+
+ol li::before {
+  content: "0" counter(my-counter);
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-family: "Abril Fatface", serif;
+  line-height: 1;
+}
+
+ol li {
+  counter-increment: my-counter;
+  display: flex;
+  width: 50%;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: chocolate;
 }
 
 .single-recipe-box {
@@ -54,6 +82,10 @@ ul {
   font-size: 75px;
 }
 
+.recipe-author {
+  font-style: italic;
+}
+
 .recipe-info {
   display: flex;
   flex-direction: row;
@@ -73,21 +105,23 @@ ul {
   border: 2px solid black;
   width: 100%;
   padding: 5px;
+  font-style: italic;
 }
 
 .recipe-bottom {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
 }
 
 .ingredients {
   border: 3px dashed black;
   padding: 10px;
+  width: 400px;
+  margin-right: 50px;
 }
 
 .recipe-method {
   border: 2px solid black;
-  width: 100%;
+  width: 50%;
   padding: 5px;
 }
