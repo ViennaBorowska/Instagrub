@@ -16,7 +16,37 @@
   padding: 2em;
 }
 
-input {
+.add-recipe-name {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-recipe-cooking-time {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-recipe-serves {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-recipe-ingredients {
   width: 100%;
   padding: 1em 1.2em;
   margin: 1em 0;

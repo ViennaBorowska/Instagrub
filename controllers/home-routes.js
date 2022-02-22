@@ -3,11 +3,11 @@ const { User, Recipe, Comments } = require("../models");
 module.exports = router;
 
 router.get("/", async (req, res) => {
-    try {
-      res.render("login")
-    } catch (err) {
-      res.sendStatus(500).send(err);
-    }
+  try {
+    res.render("login");
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
 });
 
 router.get("/dashboard", async (req, res) => {
@@ -18,7 +18,15 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/add-recipe", async (req, res) => {
+  try {
+    res.render("add-recipe");
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
+
+router.get("/user/:id", async (req, res) => {
   try {
     const userFromDb = await User.findByPk(req.params.id, {
       include: [
@@ -40,16 +48,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.get("/add-recipe", async (req, res) => {
-  try {
-    res.render("add-recipe");
-  } catch (err) {
-    res.sendStatus(500).send(err);
-  }
-});
-
 // Get Single Recipe
-router.get("/:id", async (req, res) => {
+router.get("/recipe/:id", async (req, res) => {
   try {
     const recipe = (
       await Recipe.findOne({
