@@ -26,15 +26,15 @@ User.init(
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     user_bio: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     user_image: {
       type: DataTypes.TEXT,
