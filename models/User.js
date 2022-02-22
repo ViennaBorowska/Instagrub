@@ -36,6 +36,10 @@ User.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    user_image: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     hooks: {
