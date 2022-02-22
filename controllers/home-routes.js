@@ -10,6 +10,14 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("signup");
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
+
 router.get("/dashboard", async (req, res) => {
   try {
     res.render("dashboard");
@@ -73,3 +81,4 @@ router.get("/recipe/:id", async (req, res) => {
     res.status(500).send(err);
   }
 });
+
