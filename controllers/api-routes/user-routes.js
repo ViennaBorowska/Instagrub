@@ -20,6 +20,43 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
+    if (!userData) {
+      res.status(400).json({ message: "No user found" });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password" });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      console.log(req.session.logged_in);
+      console.log(userData);
+      console.log("logged into session as true");
+
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+      res.status(204).end();
+      console.log("logged out of session");
+    });
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     const delUser = await User.destroy({ where: { id: req.params.id } });
@@ -42,5 +79,6 @@ router.put("/:id", async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
+
 
 module.exports = router;
