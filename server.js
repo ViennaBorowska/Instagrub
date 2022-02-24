@@ -29,6 +29,7 @@ app.use("/uploads", express.static("uploads"));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.use(routes);
+app.use("/uploads", express.static("./uploads"));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>

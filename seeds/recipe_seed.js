@@ -3,7 +3,8 @@ const { Recipe } = require("../models");
 const recipeData = [
   {
     recipe_title: "Pasta",
-    recipe_cooking_time: 10,
+    recipe_cooking_time_hours: 1,
+    recipe_cooking_time_minutes: 1,
     recipe_serves: 4,
     recipe_summary: "A quick and easy pasta dish to serve all the family.",
     recipe_ingredients: ["Penne", "Plus Tomatoes", "Mixed Italian Herbs"],
