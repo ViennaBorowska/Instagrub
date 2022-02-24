@@ -12,7 +12,7 @@
         <div class="recipe-nav-container">
           <div class="recipe-buttons">
             <a
-              class="recipe-nav-button active"
+              class="recipe-nav-button"
               href="#overview-link"
               class="navbar-item"
             >Overview</a>
@@ -29,19 +29,21 @@
           </div>
           <div class="recipe-nav-sharing">
             <div class="recipe-sharing-links">
-              <ul>
-                <li>
-                  <a
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F"
-                    title="Share On Facebook"
-                    target="_blank"
-                    class="social-icon social-icon--facebook"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="sharing-icons">
-
+              <a
+                href="https://twitter.com"
+                class="fab fa-twitter"
+                target="_blank"
+              ></a>
+              <a
+                href="https://facebook.com"
+                class="fab fa-facebook-f"
+                target="_blank"
+              ></a>
+              <a
+                href="https://instagram.com"
+                class="fab fa-instagram"
+                target="_blank"
+              ></a>
             </div>
           </div>
         </div>
@@ -79,6 +81,13 @@
         {{/each}}
       </ul>
     </div>
+    <div class="nutrition-container">
+      <h3>Nutrition per serving</h3>
+      <p>Calories:</p>
+      <p>Protein:</p>
+      <p>Fat:</p>
+      <p>Carbs:</p>
+    </div>
     <div class="recipe-method" id="method-link">
       <h4>METHOD</h4>
       <ol class="method-list">
@@ -91,4 +100,4 @@
   </section>
 
 </div>
-<script src="/js/single-recipe.js"></script>
+{{! <script src="/js/single-recipe.js"></script> }}
