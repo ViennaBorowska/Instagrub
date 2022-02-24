@@ -53,16 +53,16 @@
       <h1 class="recipe-title">{{recipe_title}}</h1>
       <h3 class="recipe-author">
         By
-        <a href="/user/?user_id={{user_id}}" id="recipe-user-name">
-          {{user.username}}</a></h3>
+        <a href="/user/{{user.id}}" id="recipe-user-name">
+          {{user.first_name}} {{user.last_name}}</a></h3>
       <br />
       <div class="recipe-info">
         <h5 class="recipe-info-box">
-          Cooking time:
+          <p>Cooking time ~
           {{recipe_cooking_time_hours}}
-          :
+          hrs:
           {{recipe_cooking_time_minutes}}
-          minutes</h5>
+          mins</h5>
         <h5 class="recipe-info-box"> Serves {{recipe_serves}}</h5>
       </div>
       <div class="recipe-summary">
@@ -77,9 +77,9 @@
   <section class="recipe-bottom">
     <div class="ingredients" id="ingredients-link">
       <div class="ingredients-title-holder">
-         <h4>INGREDIENTS</h4>
+        <h4>INGREDIENTS</h4>
       </div>
-     
+
       <ul class="ingredients-list">
         {{#each recipe_ingredients}}
           <li>{{this}}</li>
