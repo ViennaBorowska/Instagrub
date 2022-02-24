@@ -91,3 +91,11 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+router.get("/edit-profile", withAuth, async (req, res) => {
+  try {
+    res.render("profile-edit");
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
