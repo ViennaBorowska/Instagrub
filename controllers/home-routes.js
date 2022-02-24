@@ -47,7 +47,7 @@ router.get("/user/:id", async (req, res) => {
     //res.status(200).json(userFromDb);
     const user = userFromDb.get({ plain: true });
 
-    return res.render("profile", {
+    return res.render("profile1", {
       ...user,
     });
   } catch (err) {
