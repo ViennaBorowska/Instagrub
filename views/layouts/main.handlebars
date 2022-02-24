@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/recipe-card.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -58,6 +61,14 @@
           <h1 class="title-logo">InstaGrub</h1>
         </div>
         <div class="link-container">
+
+          {{!-- ----------------------------------- search  --}}
+          <div class="nav-search-holder">
+          <button class="search-icon-holder"> <i class="fa-solid fa-magnifying-glass"></i></button>
+          <input class="nav-search-bar" type="text">
+          </div>
+
+          {{!-- ---------------- search end --}}
           <button class="btn add-recipe-btn"><i class="fa-solid fa-plus"></i>
             Add recipe</button>
           <div class="hamburger-container">
@@ -125,8 +136,8 @@
           <div class="nav-list-container">
 
             <ul class="nav-list">
-              <li><a class="nav-links1" href="">Dashboard</a></li>
-              <li><a class="nav-links2" href="">My Profile</a></li>
+              <li><a class="nav-links1" href="/dashboard">Dashboard</a></li>
+              <li><a class="nav-links2" href="/dashboard">My Profile</a></li>
               <li><button id="logout-btn" class="nav-links3">Logout</button></li> 
               {{! <li><a class="nav-links4" href=""></a></li> }}
             </ul>
