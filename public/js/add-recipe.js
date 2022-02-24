@@ -7,7 +7,6 @@ const addIngretientInput = (event) => {
   newIngredientsInput.type = "text";
   newIngredientsInput.className = "add-recipe-ingredients";
   newIngredientsInput.id = "add-recipe-ingredients";
-  newIngredientsInput.placeholder = "Recipe ingredient...";
   newIngredientsInput.name = "add-recipe-ingredients";
 
   ingredientsContainer.appendChild(newIngredientsInput);
@@ -25,15 +24,18 @@ const addMethodInput = (event) => {
   methodsContainer.appendChild(newMethodInput);
 };
 
-const newRecipeHandler = (event) => {
+const newRecipeHandler = async (event) => {
   event.preventDefault();
 
   const recipeIngredientsArr = [];
   const recipeMethodsArr = [];
 
   const recipeName = document.querySelector(".add-recipe-name").value.trim();
-  const recipeCookingTime = document
-    .querySelector(".add-recipe-cooking-time")
+  const recipeCookingTimeHours = document
+    .querySelector(".add-recipe-cooking-time-hours")
+    .value.trim();
+  const recipeCookingTimeMins = document
+    .querySelector(".add-recipe-cooking-time-mins")
     .value.trim();
   const recipeServes = document
     .querySelector(".add-recipe-serves")
@@ -53,12 +55,42 @@ const newRecipeHandler = (event) => {
     recipeMethodsArr.push(a);
   }
 
-  console.log(recipeName);
-  console.log(recipeCookingTime);
-  console.log(recipeServes);
-  console.log(recipeSummary);
-  console.log(recipeIngredientsArr);
-  console.log(recipeMethodsArr);
+  if (
+    recipeName &&
+    recipeCookingTimeHours &&
+    recipeCookingTimeMins &&
+    recipeServes &&
+    recipeSummary &&
+    recipeIngredientsArr &&
+    recipeMethodsArr
+  ) {
+    const response = await fetch("/api/recipes/add-recipe", {
+      method: "POST",
+      body: JSON.stringify({
+        recipeName,
+        recipeCookingTimeHours,
+        recipeCookingTimeMins,
+        recipeServes,
+        recipeSummary,
+        recipeIngredientsArr,
+        recipeMethodsArr,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
+
+  // console.log(recipeName);
+  // console.log(recipeCookingTimeHours);
+  // console.log(recipeCookingTimeMins);
+  // console.log(recipeServes);
+  // console.log(recipeSummary);
+  // console.log(recipeIngredientsArr);
+  // console.log(recipeMethodsArr);
 };
 
 document
