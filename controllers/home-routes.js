@@ -34,9 +34,10 @@ router.get("/add-recipe", async (req, res) => {
   }
 });
 
-router.get("/user/:id", async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
-    const userFromDb = await User.findByPk(req.params.id, {
+    const userFromDb = await User.findOne({
+      where: { id: req.session.user_id },
       include: [
         {
           model: Recipe,
@@ -44,7 +45,7 @@ router.get("/user/:id", async (req, res) => {
         },
       ],
     });
-    //res.status(200).json(userFromDb);
+
     const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
