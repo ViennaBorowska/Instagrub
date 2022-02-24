@@ -29,7 +29,7 @@ const recipeData = [
       "sprinkle on pasta and tomatoes.",
     ],
     recipe_image: "1645705404056.jpeg",
-    user_id: 5,
+    user_id: 1,
   },
   {
     recipe_title: "Dimsum",
@@ -44,7 +44,7 @@ const recipeData = [
       "sprinkle on pasta and tomatoes.",
     ],
     recipe_image: "1645705404056.jpeg",
-    user_id: 5,
+    user_id: 1,
   },
   {
     recipe_title: "Noodles",
@@ -59,7 +59,7 @@ const recipeData = [
       "sprinkle on pasta and tomatoes.",
     ],
     recipe_image: "1645705404056.jpeg",
-    user_id: 5,
+    user_id: 1,
   },
   {
     recipe_title: "Chicken Curry",
@@ -74,7 +74,7 @@ const recipeData = [
       "sprinkle on pasta and tomatoes.",
     ],
     recipe_image: "1645705404056.jpeg",
-    user_id: 5,
+    user_id: 1,
   },
   {
     recipe_title: "Mutton Biriyani",
@@ -89,7 +89,7 @@ const recipeData = [
       "sprinkle on pasta and tomatoes.",
     ],
     recipe_image: "1645705404056.jpeg",
-    user_id: 5,
+    user_id: 1,
   },
 ];
 
