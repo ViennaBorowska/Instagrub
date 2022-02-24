@@ -19,7 +19,7 @@ const recipeData = [
   {
     recipe_title: "Fish Tandoori",
     recipe_cooking_time_hours: 1,
-    recipe_cooking_time_minutes: 1,
+    recipe_cooking_time_minutes: 30,
     recipe_serves: 4,
     recipe_summary: "A quick and easy tandoori dish to serve all the family.",
     recipe_ingredients: ["Fish", "Spices", "Oil"],

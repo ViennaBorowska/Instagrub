@@ -47,10 +47,10 @@ router.get("/user", withAuth, async (req, res) => {
       ],
     });
 
-    const user = userFromDb.get({ plain: true });
+    //const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
-      ...user,
+      ...User,
     });
   } catch (err) {
     console.log(err);
@@ -67,16 +67,18 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
         attributes: [
           "id",
           "recipe_title",
+          "recipe_cooking_time_hours",
           "recipe_cooking_time_minutes",
           "recipe_serves",
           "recipe_summary",
           "recipe_ingredients",
           "recipe_method",
+          "recipe_image",
         ],
         include: [
           {
             model: User,
-            attributes: ["username"],
+            attributes: ["username", "first_name", "last_name"],
           },
         ],
       })

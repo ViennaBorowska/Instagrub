@@ -3,7 +3,7 @@
     <div class="recipe-image-box">
       <img
         class="recipe-image"
-        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/goulash-1640024815.jpeg?crop=1.00xw:0.752xh;0,0.115xh&resize=1200:*"
+        src="/uploads/{{recipe_image}}"
         alt="Recipe image"
       />
     </div>
@@ -53,20 +53,24 @@
       <h1 class="recipe-title">{{recipe_title}}</h1>
       <h3 class="recipe-author">
         By
-        <a href="/user/?user_id={{user_id}}" id="recipe-user-name">
-          {{user.username}}</a></h3>
+        <a href="/user/{{user.id}}" id="recipe-user-name">
+          {{user.first_name}} {{user.last_name}}</a></h3>
       <br />
       <div class="recipe-info">
         <h5 class="recipe-info-box">
-          Cooking time:
+          <p>Cooking time ~
+          {{recipe_cooking_time_hours}}
+          hrs
           {{recipe_cooking_time_minutes}}
-          minutes</h5>
+          mins</h5>
         <h5 class="recipe-info-box"> Serves {{recipe_serves}}</h5>
       </div>
       <div class="recipe-summary">
         <p class="recipe-summary-body">
-          <h4>SUMMARY</h4>
-          {{recipe_summary}}
+          <div class="summary-title-holder">
+            <h4>SUMMARY</h4>
+          </div>
+          "{{recipe_summary}}"
         </p>
       </div>
     </div>
@@ -75,9 +79,9 @@
   <section class="recipe-bottom">
     <div class="ingredients" id="ingredients-link">
       <div class="ingredients-title-holder">
-         <h4>INGREDIENTS</h4>
+        <h4>INGREDIENTS</h4>
       </div>
-     
+
       <ul class="ingredients-list">
         {{#each recipe_ingredients}}
           <li>{{this}}</li>
@@ -85,19 +89,28 @@
       </ul>
     </div>
     <div class="nutrition-container">
+      <div class="nutrition-title">
       <h3>Nutrition per serving</h3>
+      </div>
+      <div class="nutrition-body">
       <p>Calories:</p>
       <p>Protein:</p>
       <p>Fat:</p>
       <p>Carbs:</p>
+      </div>
     </div>
     <div class="recipe-method" id="method-link">
+      <div class="method-container">
       <h4>METHOD</h4>
       <ol class="method-list">
         {{#each recipe_method}}
-          <li>{{this}}</li>
+          <li>
+          {{this}}
+          </li>
+          __________________________________________________________________
         {{/each}}
       </ol>
+      </div>
     </div>
 
   </section>
