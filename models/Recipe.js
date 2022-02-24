@@ -16,7 +16,11 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    recipe_cooking_time: {
+    recipe_cooking_time_hours: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    recipe_cooking_time_minutes: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -36,13 +40,16 @@ Recipe.init(
       type: DataTypes.JSON,
       allowNull: false,
     },
+    recipe_image: {
+      type: DataTypes.TEXT,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
-    }
+    },
   },
   {
     sequelize,

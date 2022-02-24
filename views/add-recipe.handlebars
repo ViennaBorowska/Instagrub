@@ -4,51 +4,72 @@
     <p>Fill in all of the below information and share your recipe with everyone!</p>
   </section>
   <section class="add-recipe-form">
+    <p>RECIPE NAME</p>
     <input
       type="text"
       class="add-recipe-name"
       id="add-recipe-name"
-      placeholder="Recipe name..."
+      placeholder="E.g. Salmon Pesto Pasta"
     />
-    <input
-      type="number"
-      class="add-recipe-cooking-time"
-      id="add-recipe-cooking-time"
-      placeholder="Recipe cooking time in minutes..."
-    />
-    <input
-      type="number"
-      class="add-recipe-serves"
-      id="add-recipe-serves"
-      placeholder="Recipe serves..."
-    />
+    <p>TOTAL TIME</p>
+    <p class="sub-text">What is the total recipe time for both prep and cooking?</p>
+    <div class="cooking-time-wrapper">
+      <input
+        type="number"
+        class="add-recipe-cooking-time-hours"
+        id="add-recipe-cooking-time-hours"
+      />
+      <label class="cooking-time-hours">hours</label>
+      <input
+        type="number"
+        class="add-recipe-cooking-time-mins"
+        id="add-recipe-cooking-time-mins"
+      />
+      <label class="cooking-time-mins">minutes</label>
+    </div>
+    <p>PORTIONS</p>
+    <p class="sub-text">How many people does the recipe serve?</p>
+    <input type="number" class="add-recipe-serves" id="add-recipe-serves" />
+    <p>SUMMARY</p>
+    <p class="sub-text">Give a brief overview of the recipe.</p>
     <textarea
       type="text"
       class="add-recipe-summary"
       id="add-recipe-summary"
-      placeholder="Recipe summary..."
     ></textarea>
+    <p>INGREDIENTS</p>
+    <p class="sub-text">Remember to add the amount and unit. To add more
+      ingredients, use the + button.</p>
     <div class="recipe-ingredients-container">
       <input
         type="text"
         class="add-recipe-ingredients"
         id="add-recipe-ingredients"
         name="add-recipe-ingredients"
-        placeholder="Recipe ingredient..."
+        placeholder="E.g. 75g Penne Pasta"
       />
     </div>
-    <button class="add-ingredient">Add another ingredient</button>
+    <button class="add-ingredient"><i
+        class="fa fa-plus"
+        aria-hidden="true"
+      ></i></button>
+    <p>METHOD</p>
+    <p class="sub-text">To add more steps, use the + button.</p>
     <div class="recipe-method-container">
       <textarea
         class="add-recipe-method-step"
         id="add-recipe-method-step"
         name="add-recipe-method-step"
-        placeholder="Recipe method step one..."
+        placeholder="E.g. Step one: "
       ></textarea>
     </div>
-    <button class="add-method-step">Add another method step</button>
-    <button class="submit-recipe">Submit recipe</button>
+    <button class="add-method-step"><i
+        class="fa fa-plus"
+        aria-hidden="true"
+      ></i>
+    </button>
   </section>
+  <button class="submit-recipe">Submit recipe</button>
 </div>
 
 <script src="/js/add-recipe.js"></script>
