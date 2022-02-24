@@ -60,7 +60,7 @@
         <h5 class="recipe-info-box">
           <p>Cooking time ~
           {{recipe_cooking_time_hours}}
-          hrs:
+          hrs
           {{recipe_cooking_time_minutes}}
           mins</h5>
         <h5 class="recipe-info-box"> Serves {{recipe_serves}}</h5>
@@ -100,12 +100,17 @@
       </div>
     </div>
     <div class="recipe-method" id="method-link">
+      <div class="method-container">
       <h4>METHOD</h4>
       <ol class="method-list">
         {{#each recipe_method}}
-          <li>{{this}}</li>
+          <li>
+          {{this}}
+          </li>
+          __________________________________________________________________
         {{/each}}
       </ol>
+      </div>
     </div>
 
   </section>
