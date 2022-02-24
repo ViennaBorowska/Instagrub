@@ -22,6 +22,14 @@ const userData = [
     last_name: "Borowska",
     user_bio: "I really like Italian food. Pizza is my favourite food.",
   },
+  {
+    username: "sampreeti",
+    password: "password",
+    first_name: "Sampreeti",
+    last_name: "Das",
+    user_bio: "I really like Indian food. Fish is my favourite food.",
+    user_image: "sample-profile.jpg",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);

@@ -40,14 +40,14 @@ router.get("/user/:id", async (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ["id", "recipe_title"],
+          attributes: ["id", "recipe_title", "recipe_image"],
         },
       ],
     });
     //res.status(200).json(userFromDb);
     const user = userFromDb.get({ plain: true });
 
-    return res.render("profile1", {
+    return res.render("profile", {
       ...user,
     });
   } catch (err) {
