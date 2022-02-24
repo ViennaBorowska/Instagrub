@@ -12,10 +12,6 @@ h4 {
   text-align: center;
 }
 
-p {
-  text-align: center;
-}
-
 ul li {
   list-style-image: url("../images/ingredient-list-bullet.png");
   list-style-position: inside;
@@ -58,6 +54,10 @@ a {
 
   height: 100%;
   width: 90%;
+}
+
+.single-recipe-box > * {
+  text-align: center;
 }
 
 .recipe-top {
@@ -256,4 +256,10 @@ a {
   .ingredients {
     align-items: center;
   }
+}
+
+.ingredients-title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
