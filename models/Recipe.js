@@ -42,6 +42,7 @@ Recipe.init(
     },
     recipe_image: {
       type: DataTypes.TEXT,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

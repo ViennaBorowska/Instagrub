@@ -34,17 +34,18 @@ router.get("/add-recipe", withAuth, async (req, res) => {
   }
 });
 
-router.get("/user/:id", withAuth, async (req, res) => {
+router.get("/user", withAuth, async (req, res) => {
   try {
-    const userFromDb = await User.findByPk(req.params.id, {
+    const userFromDb = await User.findOne({
+      where: { id: req.session.user_id },
       include: [
         {
           model: Recipe,
-          attributes: ["id", "recipe_title"],
+          attributes: ["id", "recipe_title", "recipe_image"],
         },
       ],
     });
-    //res.status(200).json(userFromDb);
+
     const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {

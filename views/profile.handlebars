@@ -1,51 +1,45 @@
-<h1>Profile</h1>
-<section class="content">
-  <section id="profile_image" class="content-section">
-
-    <img class="float-left" src="/uploads/{{user_image}}" alt="User Profile" />
-
-    <!--<a href="/api/users/1">Upload Profile Picture</a>-->
-    <form
-      method="POST"
-      action="/api/profile-image"
-      id="profile-image-form"
-      enctype="multipart/form-data"
-    >
-      <div>
-        <input
-          type="file"
-          name="profile-file"
-          id="profile-file"
-          value="Upload profile picture"
-        />
+<div class="profile__content">
+    <section class="content__top">
+        <div class="profile__info">
+          <div class="profile__left">
+            <img src="/uploads/{{user_image}}" alt="Profile Image" class="profile__image">
+          </div>
+          <div class="profile__middle">
+            <h1>{{first_name}} {{last_name}}</h1>
+            <p>{{user_bio}}</p>
+          </div>
+          <div class="profile__right">
+            <button class="btn profile__update__btn"><i class="fa-solid fa-pen-to-square"></i>
+            Edit</button>
+          </div>
       </div>
-      <input type="hidden" name="userId" value="1" />
-    </form>
-  </section>
+    </section>
 
-  <section id="profile_bio" class="content-section-bio">
-    <p>{{first_name}} {{last_name}}</p>
-    <div>
-      <p>{{user_bio}}</p>
+    <div class="content__middle">
+      <h3>My Recipes</h3>
+      <hr>
     </div>
-  </section>
-  {{#each recipes as |recipe|}}
-    <section id="profile_image" class="recipe-section">
-      <img
-        class="float-left"
-        src="/images/sample-profile.jpg"
-        alt="User Profile"
-      />
-      <p>{{recipe.recipe_title}}</p>
+
+    <section class="content__bottom">
+      {{#each recipes as |recipe|}}
+         <div class="card">
+            <img class="card__image" src="/uploads/{{recipe.recipe_image}}" alt="">
+            <div class="card__content">
+                <p>
+                  {{recipe.recipe_title}}
+                </p>
+            </div>
+            <div class="card__info">
+              <div>
+               <i class="fa-solid fa-heart"></i>140
+              </div>
+              <div>
+                <a href="/recipe/{{recipe.id}}" class="card__link">View Recipe</a>
+              </div>
+            </div>
+          </div>
+    
+      {{/each}}    
     </section>
-    <section id="profile_image" class="recipe-section">
-      <img
-        class="float-left"
-        src="/images/sample-profile.jpg"
-        alt="User Profile"
-      />
-      <p>{{recipe.recipe_title}}</p>
-    </section>
-  {{/each}}
+  
 </section>
-<script src="/js/upload-image.js"></script>
