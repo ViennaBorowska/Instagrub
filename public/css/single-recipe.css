@@ -8,7 +8,7 @@ h4 {
   border-bottom-style: dashed;
   border-bottom-width: 1px;
   width: fit-content;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   text-align: center;
 }
 
@@ -179,6 +179,15 @@ a {
   padding: 5px;
   font-style: italic;
   font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+.summary-title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-style: normal;
 }
 
 .recipe-summary-body {
@@ -195,6 +204,12 @@ a {
   align-items: center;
 }
 
+.ingredients-title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ingredients {
   border: 3px dashed black;
   padding: 10px;
@@ -205,11 +220,12 @@ a {
 
 .nutrition-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 1px solid black;
   width: 50%;
   padding: 5px;
   font-family: "Courier New", Courier, monospace;
+  margin-bottom: 20px;
 }
 
 .nutrition-container h3 {
@@ -218,6 +234,12 @@ a {
 
 .nutrition-container p {
   padding: 5px;
+}
+
+.nutrition-body {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .recipe-method {
@@ -229,6 +251,12 @@ a {
 .method-list li {
   align-items: center;
   text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nutrition-container {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 768px) {

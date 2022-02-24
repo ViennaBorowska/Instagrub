@@ -3,7 +3,7 @@
     <div class="recipe-image-box">
       <img
         class="recipe-image"
-        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/goulash-1640024815.jpeg?crop=1.00xw:0.752xh;0,0.115xh&resize=1200:*"
+        src="/uploads/{{recipe_image}}"
         alt="Recipe image"
       />
     </div>
@@ -67,8 +67,10 @@
       </div>
       <div class="recipe-summary">
         <p class="recipe-summary-body">
-          <h4>SUMMARY</h4>
-          {{recipe_summary}}
+          <div class="summary-title-holder">
+            <h4>SUMMARY</h4>
+          </div>
+          "{{recipe_summary}}"
         </p>
       </div>
     </div>
@@ -87,11 +89,15 @@
       </ul>
     </div>
     <div class="nutrition-container">
+      <div class="nutrition-title">
       <h3>Nutrition per serving</h3>
+      </div>
+      <div class="nutrition-body">
       <p>Calories:</p>
       <p>Protein:</p>
       <p>Fat:</p>
       <p>Carbs:</p>
+      </div>
     </div>
     <div class="recipe-method" id="method-link">
       <h4>METHOD</h4>
