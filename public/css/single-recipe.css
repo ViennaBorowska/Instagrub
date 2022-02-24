@@ -8,7 +8,12 @@ h4 {
   border-bottom-style: dashed;
   border-bottom-width: 1px;
   width: fit-content;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
 
 ul li {
@@ -45,34 +50,99 @@ a {
 .single-recipe-box {
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
   border-radius: 1em;
   margin: 20px;
   padding: 20px;
-  background-color: silver;
-  box-shadow: 0px 13px 10px black;
+  background-color: whitesmoke;
+  text-align: center;
+
   height: 100%;
   width: 90%;
 }
 
 .recipe-top {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
+  align-items: center;
 }
 
 .recipe-image-box {
-  height: 400px;
-  width: 400px;
-  border: 3px solid black;
+  display: flex;
+  height: 500px;
+  width: 800px;
+  padding: 10px;
   margin-bottom: 30px;
-  margin-right: 50px;
 }
 
 .recipe-image {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 25px;
+  box-shadow: 0px 13px 10px black;
+}
+
+.recipe-nav-wrap {
+  height: 54px;
+  margin: 5px 0 1rem;
+  width: 40%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-nav {
+  align-items: left;
+  padding: 0;
+  background-color: whitesmoke;
+  z-index: 999;
+  width: 100%;
+  border-bottom: 1px solid #e1ddd8;
+}
+
+.recipe-nav-container {
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+}
+
+.recipe-buttons {
+  display: inline-block;
+}
+
+.recipe-buttons a {
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  font-family: "Abril Fatface", serif;
+  font-size: 1.5em;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+}
+
+.recipe-nav-button {
+  cursor: pointer;
+  color: #33319f;
+  font-weight: 500;
+  border-radius: 0;
+  padding: 1rem 0;
+  margin-right: 2rem;
+  border: 0.5px solid black;
+}
+
+.recipe-buttons a:hover {
+  text-decoration: underline;
+}
+
+.recipe-buttons a:active {
+  color: chocolate;
+}
+
+.recipe-sharing-links a {
+  text-decoration: none;
+  padding: 5px;
 }
 
 .top-rhs {
@@ -82,6 +152,7 @@ a {
 
 .recipe-title {
   font-size: 75px;
+  font-family: "Abril Fatface", serif;
 }
 
 .recipe-author {
@@ -92,10 +163,10 @@ a {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .recipe-info-box {
-  background-color: chocolate;
   padding: 10px;
   border-style: outset;
   border-color: chocolate;
@@ -104,28 +175,60 @@ a {
 }
 
 .recipe-summary {
-  border: 2px solid black;
   width: 100%;
   padding: 5px;
   font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.recipe-summary-body {
+  text-align: center;
+}
+
+.recipe-summary-body h4 {
+  text-align: center;
 }
 
 .recipe-bottom {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ingredients {
   border: 3px dashed black;
   padding: 10px;
   width: 400px;
-  margin-right: 50px;
+  margin: 50px;
+  text-align: left;
+}
+
+.nutrition-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  width: 50%;
+  padding: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.nutrition-container h3 {
+  padding-right: 10px;
+}
+
+.nutrition-container p {
+  padding: 5px;
 }
 
 .recipe-method {
   border: 2px solid black;
   width: 50%;
   padding: 5px;
+}
+
+.method-list li {
+  align-items: center;
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
