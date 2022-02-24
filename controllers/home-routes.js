@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Recipe, Comments } = require("../models");
-const withAuth = require("../utils/auth");module.exports = router;
+const withAuth = require("../utils/auth");
+module.exports = router;
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
@@ -66,7 +67,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
         attributes: [
           "id",
           "recipe_title",
-          "recipe_cooking_time",
+          "recipe_cooking_time_minutes",
           "recipe_serves",
           "recipe_summary",
           "recipe_ingredients",
