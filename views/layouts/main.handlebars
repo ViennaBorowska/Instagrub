@@ -4,19 +4,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagrub</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>InstaGrub</title>
     <link rel="stylesheet" href="/css/profile_style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;693&family=Josefin+Sans:ital,wght@1,300&family=Lato:wght@300&family=Nunito:ital,wght@0,400;1,700&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;693&family=Josefin+Sans:ital,wght@1,300&family=Lato:wght@300&family=Nunito:ital,wght@0,400;1,700&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/add-update.css" />
     <link rel="stylesheet" href="/css/single-recipe.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/signup.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/recipe-card.css">
-    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/recipe-card.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <link rel="stylesheet" href="/css/comment-card.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -26,7 +42,7 @@
     />
   </head>
   <body>
-     <header>
+    <header>
       <nav class="nav">
         <div class="logo-container"><img src="" alt="" />
           <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In  -->
@@ -63,13 +79,14 @@
         </div>
         <div class="link-container">
 
-          {{!-- ----------------------------------- search  --}}
+          {{! ----------------------------------- search  }}
           <div class="nav-search-holder">
-          <button class="search-icon-holder"> <i class="fa-solid fa-magnifying-glass"></i></button>
-          <input class="nav-search-bar" type="text">
+            <button class="search-icon-holder">
+              <i class="fa-solid fa-magnifying-glass"></i></button>
+            <input class="nav-search-bar" type="text" />
           </div>
 
-          {{!-- ---------------- search end --}}
+          {{! ---------------- search end }}
           <button class="btn add-recipe-btn"><i class="fa-solid fa-plus"></i>
             Add recipe</button>
           <div class="hamburger-container">
@@ -132,19 +149,22 @@
 
       </nav>
       <div class="menu-container">
-      <div class="menu">
-        <nav class="menu">
-          <div class="nav-list-container">
+        <div class="menu">
+          <nav class="menu">
+            <div class="nav-list-container">
 
-            <ul class="nav-list">
-              <li><a class="nav-links1" href="/dashboard">Dashboard</a></li>
-              <li><a class="nav-links2" href="/user">My Profile</a></li>
-              <li><button id="logout-btn" class="nav-links3">Logout</button></li> 
-              {{! <li><a class="nav-links4" href=""></a></li> }}
-            </ul>
-          </div>
-        </nav>
-      </div>
+              <ul class="nav-list">
+                <li><a class="nav-links1" href="/dashboard">Dashboard</a></li>
+                <li><a class="nav-links2" href="/user">My Profile</a></li>
+                <li><button
+                    id="logout-btn"
+                    class="nav-links3"
+                  >Logout</button></li>
+                {{! <li><a class="nav-links4" href=""></a></li> }}
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
     </header>
     <main class="body-container">
