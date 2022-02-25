@@ -240,6 +240,11 @@ a {
   flex-direction: row;
 }
 
+.method-comment-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .recipe-method {
   width: 50%;
   padding: 5px;
@@ -263,7 +268,7 @@ a {
 }
 
 @media only screen and (max-width: 1024px) {
-  .nutrition-container {
+  .nutrition-body {
     flex-direction: column;
   }
 }
