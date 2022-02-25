@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --go-btn: rgb(76, 197, 76);
   --go-btn-hover: rgb(101, 223, 101);
   --main-background: rgb(226, 226, 226);
@@ -145,13 +145,13 @@
 }
   /* ----------------------------------- */
 
-.recipe-card-bio {
+/* .recipe-card-bio {
   scrollbar-width: thin;
   scrollbar-color: rgb(148, 148, 148) rgb(46, 46, 46);
-}
+} */
 
 /* Works on Chrome, Edge, and Safari */
-.recipe-card-bio::-webkit-scrollbar {
+/* .recipe-card-bio::-webkit-scrollbar {
   width: 5px;
   opacity: 0;
 }
@@ -166,14 +166,14 @@
   border-radius: 60px;
   border: rgb(255, 255, 255);
   opacity: 0;
-}
+} */
 
 
 
 
 
 /* ------------------------------------------- media queries  */
-
+/* 
 @media screen and (max-width: 520px) {
   .recipe-card {
     width: 300px;
@@ -196,4 +196,4 @@
     line-height: 15px;
     margin-bottom: 10px;
   }
-}
+}  */

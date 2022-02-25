@@ -14,9 +14,9 @@
   justify-content: center;
   align-items: flex-start;
   background-color: var(--main-background);
-  gap: 50px;
+  gap: 60px;
   flex-wrap: wrap;
-  margin-top: 5px;
+  margin-top: 80px;
 }
 
 

@@ -3,6 +3,15 @@ const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 module.exports = router;
 
+
+router.get("/", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
+    return;
+  }
+  res.render("login");
+})
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/dashboard");
@@ -10,6 +19,8 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
+
+;
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
@@ -21,7 +32,7 @@ router.get("/signup", (req, res) => {
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    res.render("dashboard");
+    res.render("dashboard", { logged_in: req.session.logged_in });
   } catch (err) {
     res.sendStatus(500).send(err);
   }

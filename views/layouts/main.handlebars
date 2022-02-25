@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/signup.css">
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/recipe-card.css">
-    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/image-recipe-cards-modal.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -26,6 +26,8 @@
     />
   </head>
   <body>
+    
+    {{#if logged_in}}
      <header>
       <nav class="nav">
         <div class="logo-container"><img src="" alt="" />
@@ -147,14 +149,25 @@
       </div>
       </div>
     </header>
+      {{/if}}
+
     <main class="body-container">
       {{{body}}}
     </main>
+
+
+    {{#if logged_in}}
     <footer class="footer">
       <a href="https://github.com/ViennaBorowska/Steps-Project-2">Github</a>
     </footer>
+    {{/if}}
+
+
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="/js/menu.js"></script>
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
+
