@@ -22,8 +22,27 @@
   padding: 5px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 50px;
+}
+
+.badge-icon-holder {
+  margin-right: 10px;
+}
+
+.fa-seedling {
+  color: rgb(14, 182, 14);
+}
+
+.fa-fish {
+  color: rgb(75, 75, 221);
+}
+
+.fa-shrimp {color: rgb(250, 85, 85);
+}
+
+.fa-pepper-hot {
+  color: red;
 }
 
 
@@ -35,6 +54,12 @@
   font-weight: 400;
   font-size: 16px;
 }
+
+.recipe-card-img-holder {
+  width: 410px;
+  height: 500px;
+}
+
 
 .recipe-card-img {
  
@@ -179,6 +204,11 @@
     width: 380px;
   }
 
+  .recipe-card-img-holder {
+    width: 380px;
+    height: 450px;
+  }
+
   .recipe-card-img {
     background-size: cover;
     background-position: center;
@@ -202,6 +232,11 @@
 @media screen and (max-width: 520px) {
   .recipe-card {
     width: 330px;
+  }
+
+  .recipe-card-img-holder {
+    width: 330px;
+    height: 400px;
   }
 
   .recipe-card-img {
