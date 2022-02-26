@@ -80,6 +80,10 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
             model: User,
             attributes: ["username", "first_name", "last_name"],
           },
+          {
+            model: Comments,
+            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+          },
         ],
       })
     ).get({ plain: true });

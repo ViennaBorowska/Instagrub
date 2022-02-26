@@ -99,21 +99,31 @@
       <p>Carbs:</p>
       </div>
     </div>
+    <div class="method-comment-container">
+    <div class="method-comment-row">
     <div class="recipe-method" id="method-link">
       <div class="method-container">
       <h4>METHOD</h4>
       <ol class="method-list">
         {{#each recipe_method}}
-          <li>
-          {{this}}
-          </li>
-          __________________________________________________________________
+          <li> <br />
+          {{this}}</li>
         {{/each}}
       </ol>
       </div>
     </div>
-
+    <div class="comments-partials">
+      <h4>COMMENTS</h4>
+       {{#each comments as |comment|}}
+        {{> comment-cards }}
+    {{/each}}
+    </div>
+  </div>
+  </div>
   </section>
 
+ 
 </div>
+
+
 {{! <script src="/js/single-recipe.js"></script> }}
