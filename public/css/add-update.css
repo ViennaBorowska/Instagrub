@@ -13,10 +13,19 @@
   border-radius: 1em;
 }
 
+.input-title {
+  text-align: left;
+}
+
 .sub-text {
   color: rgb(131, 129, 129);
   font-size: small;
   font-style: italic;
+  text-align: left;
+}
+
+.file-upload {
+  margin: 1em 0;
 }
 
 .add-recipe-name {
@@ -27,6 +36,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .cooking-time-wrapper {
@@ -77,6 +87,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .submit-recipe {
@@ -112,6 +123,7 @@
   box-sizing: border-box;
   resize: vertical;
   height: 5em;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .add-ingredient {

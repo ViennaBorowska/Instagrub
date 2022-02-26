@@ -230,3 +230,26 @@
   border-color: blueviolet;
   border-width: thick;
 }
+
+@media only screen and (max-width: 768px) {
+  .profile__info {
+    flex-direction: column;
+  }
+
+  .profile__middle {
+    width: 240px;
+    margin: auto;
+  }
+
+  .profile__middle p {
+    margin-right: 20px;
+  }
+
+  .profile__right {
+    margin-top: 20px;
+  }
+
+  .card {
+    margin-left: 0px;
+  }
+}
