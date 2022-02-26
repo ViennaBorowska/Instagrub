@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+
 .add-recipe-container {
   margin-top: 4em;
 }
@@ -42,7 +44,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier Prime";
 }
 
 .cooking-time-wrapper {
@@ -59,6 +61,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Courier Prime";
 }
 
 .add-recipe-cooking-time-mins {
@@ -69,6 +72,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Courier Prime";
 }
 
 .cooking-time-hours {
@@ -83,6 +87,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: "Courier Prime";
 }
 
 .add-recipe-ingredients {
@@ -93,7 +98,7 @@
   border: 1px solid black;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier Prime";
 }
 
 .submit-recipe {
@@ -128,6 +133,7 @@
   box-sizing: border-box;
   resize: vertical;
   height: 5em;
+  font-family: "Courier Prime";
 }
 
 .add-recipe-method-step {
@@ -140,7 +146,7 @@
   box-sizing: border-box;
   resize: vertical;
   height: 5em;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier Prime";
 }
 
 .add-ingredient {
