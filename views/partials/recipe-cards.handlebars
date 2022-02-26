@@ -5,14 +5,14 @@
     <h3 class="recipe-card-author">
       <span class="chef-icon"><i
           class="fa-solid fa-utensils"
-        ></i></span>Alistair100
+        ></i></span> {{ user.username }}
     </h3>
   </div>
   {{!card image ------------------------------------------------}}
   <div class="recipe-card-img-holder">
     <img
       class="recipe-card-img"
-      src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80"
+      src="../../uploads/{{ recipe_image }}"
       alt="picture of pancakes"
     />
   </div>
@@ -25,15 +25,13 @@
         >30 likes</span></span>
       <span class="timer-icon"><i class="fa-solid fa-clock"></i><span
           class="timer-icon-text"
-        >15 mins</span></span>
+        > {{ recipe_cooking_time_hours }} Hours  {{recipe_cooking_time_minutes}}</span></span>
     </div>
     {{! title }}
-    <h3 class="recipe-card-title">Maple Pancakes</h3>
+    <h3 class="recipe-card-title">{{ recipe_title }}</h3>
     {{! bio }}
-    <p class="recipe-card-bio">These Pancakes are super yummy and dripping in
-      maple syrup, perfect for any breakfast or snack. This simple recipe feeds
-      a family of four.</p>
-    <h3 class="recipe-card-comments">10 comments</h3>
+    <p class="recipe-card-bio">{{ recipe_summary }}</p>
+    <h3 class="recipe-card-comments">{{ comments.length }} Comments</h3>
 
   </div>
 </article>
