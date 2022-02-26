@@ -3,9 +3,9 @@ body {
   line-height: 2;
 }
 
-h4 {
-  font-family: "Abril Fatface", serif;
-  font-size: 1.5em;
+.section-title {
+  font-family: "Noto Serif Display", serif;
+  font-size: 2em;
 }
 
 ul li {
@@ -42,6 +42,7 @@ a {
 }
 
 .single-recipe-box {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 1em;
@@ -62,6 +63,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 10px;
   align-items: center;
 }
 
@@ -136,7 +138,7 @@ a {
 }
 
 .recipe-buttons a:active {
-  color: chocolate;
+  color: orange;
 }
 
 .recipe-sharing-links a {
@@ -154,6 +156,15 @@ a {
   font-family: "Abril Fatface", serif;
 }
 
+.like-icon {
+  size: 10px;
+}
+
+.like-icon:hover {
+  color: rgb(226, 42, 42);
+  cursor: pointer;
+}
+
 .recipe-author {
   font-family: "Abril Fatface", serif;
   font-style: italic;
@@ -169,7 +180,7 @@ a {
 .recipe-info-box {
   padding: 10px;
   border-style: outset;
-  border-color: chocolate;
+  border-color: orange;
   border-radius: 5px;
   margin: 5px;
 }
@@ -202,15 +213,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.ingredients-title-holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 75%;
 }
 
 .ingredients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 3px dashed black;
   padding: 10px;
   width: 30%;
@@ -303,10 +312,4 @@ a {
   .ingredients {
     align-items: center;
   }
-}
-
-.ingredients-title-holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
