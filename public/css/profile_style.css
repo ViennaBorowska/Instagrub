@@ -101,10 +101,6 @@
   line-height: 1.5rem;
 }
 
-.profile__right {
-  /*height: 150px;*/
-}
-
 .profile__info {
   padding: 15px;
   display: flex;
