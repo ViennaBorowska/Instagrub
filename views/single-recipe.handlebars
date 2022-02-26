@@ -52,10 +52,9 @@
     <div class="top-rhs" id="overview-link">
 
       <h1 class="recipe-title">{{recipe_title}}</h1>
-       <span class="like-icon"><btn class="far fa-heart fa-2x" id="likes"></btn> 11 </span>
+       <span class="like-icon" id="like-icon"><btn class="far fa-heart fa-2x" id="likes"></btn></span>
       <h3 class="recipe-author">
         By
-      <h1 class="recipe-title">{{recipe_title}}</h1>
       <h3 class="recipe-author">
         <a href="/user/{{user.id}}" id="recipe-user-name">
           {{user.first_name}} {{user.last_name}}</a></h3>
@@ -80,10 +79,23 @@
     </div>
     <br />
   <section class="recipe-bottom">
-    <div class="ingredients" id="ingredients-link">
+    {{!-- <div class="ingredients" id="ingredients-link">
         <div class="ingredients-container">
           <h4 class="section-title">INGREDIENTS</h4>
         <ul class="ingredients-list">
+          {{#each recipe_ingredients}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div> --}}
+
+    <div class="ingredients" id="ingredients-link">
+      <div class="ingredients-container">
+       <h4 class="section-title">INGREDIENTS</h4>
+      </div>
+      <div class="ingredients-body">
+      <ul class="ingredients-list">
           {{#each recipe_ingredients}}
             <li>{{this}}</li>
           {{/each}}
@@ -102,31 +114,36 @@
       <p>Carbs:</p>
       </div>
     </div>
-    <div class="method-comment-container">
-    <div class="method-comment-row">
-    <div class="recipe-method" id="method-link">
-      <div class="method-container">
-      <h4 class="section-title">METHOD</h4>
-      <ol class="method-list">
-        {{#each recipe_method}}
-          <li> <br />
-          {{this}}</li>
-        {{/each}}
-      </ol>
-      </div>
-    </div>
+    <div class="method-comment-container">   
+      <div class="recipe-method" id="method-link">
+        <div class="method-container">
+        <h4 class="section-title">METHOD</h4>
+        <ol class="method-list">
+          {{#each recipe_method}}
+            <li> <br />
+            {{this}}</li>
+          {{/each}}
+        </ol>
+        </div>
+        </div>  
     <div class="comments-partials">
       <h4 class="section-title">COMMENTS</h4>
        {{#each comments as |comment|}}
         {{> comment-cards }}
     {{/each}}
     </div>
-  </div>
+  
   </div>
   </section>
 
- 
+<footer>
+  <div class="id-select-span">{{ id }}</div>
+  {{#if logged_in}}
+  <button class="btn" id="update-recipe-btn" type="click"> Update</button>
+  <button class="btn" id="delete-recipe-btn" type="click" > Delete </button>
+  {{/if}}
+</footer> 
 </div>
 
 
-<script src="/js/likes.js"></script>
+<script src="/js/single-recipe.js"></script>
