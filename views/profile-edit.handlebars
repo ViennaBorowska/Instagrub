@@ -6,9 +6,9 @@
         <section class="profile__update__form">
             <div class="update__image">
                 <div>
-                    <img src="/uploads/{{user_image}}" alt="Profile Image" class="profile__image">
+                    <img src="/uploads/{{user_image}}" alt="Profile Image" class="edit__profile__image">
                 </div>
-                <div class="update__input">
+                <div class="update__image__input">
                     <input type="file" name="profile-file" id="profile-file" value="Upload profile picture"/>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <input
                 type="text"
                 value="{{first_name}}"
-                class="update-input"
+                class="update__input"
                 name="firstname"
                 placeholder="E.g. Sampreeti "
                 />
@@ -27,14 +27,14 @@
                 <input
                 type="text"
                 value="{{last_name}}"
-                class="update-input"
+                class="update__input"
                 name="lastname"
                 placeholder="E.g. Das"
                 />
                 <br>
                 <p>BIOGRAPHY</p>
                 <textarea rows="10"
-                class="update-textarea"
+                class="update__textarea"
                 name="userbio"
                 placeholder="E.g. Write something about you."
                 >{{user_bio}}</textarea>

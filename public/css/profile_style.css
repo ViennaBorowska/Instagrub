@@ -278,7 +278,7 @@
   border-radius: 15px;
 }
 
-.update__input {
+.update__image__input {
   /*margin-top: 30px;*/
   display: flex;
   margin: auto;
@@ -294,23 +294,30 @@
   margin-left: 100px;
 }
 
+.edit__profile__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
 .profile__update p {
   font-weight: bold;
 }
 
-.update-input {
+.update__input {
   height: 40px;
   padding: 5px;
   border-radius: 5px;
 }
 
-.update-textarea {
+.update__textarea {
   padding: 5px;
   border-radius: 5px;
 }
 
 .edit__profile__btn {
   float: right;
+  margin-right: 25px;
   display: flex;
   gap: 10px;
   background-color: var(--go-btn);
@@ -336,6 +343,39 @@
 
   .card {
     margin-left: 0px;
+  }
+  .update__image {
+    flex-direction: column;
+    margin-left: 0px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .edit__profile__image {
+    margin-bottom: 20px;
+  }
+
+  .update__input {
+    width: 100%;
+  }
+
+  .update__textarea {
+    width: 100%;
+  }
+
+  .profile__edit__content {
+    width: 80%;
+  }
+
+  .profile__update {
+    margin-left: 0px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .edit__profile__btn {
+    float: none;
+    margin: auto;
   }
 }
 
