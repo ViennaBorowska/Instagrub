@@ -10,11 +10,12 @@
   </div>
   {{!card image ------------------------------------------------}}
   <div class="recipe-card-img-holder">
-    <img
+    <a href="/recipe/{{ id }}"><img
       class="recipe-card-img"
       src="../../uploads/{{ recipe_image }}"
       alt="picture of pancakes"
-    />
+    /></a>
+    
   </div>
   {{! card body -------------------------------------------------------}}
   <div class="recipe-card-body">
@@ -25,13 +26,16 @@
         >30 likes</span></span>
       <span class="timer-icon"><i class="fa-solid fa-clock"></i><span
           class="timer-icon-text"
-        > {{ recipe_cooking_time_hours }} Hours  {{recipe_cooking_time_minutes}}</span></span>
+        > {{ recipe_cooking_time_hours }} Hours  {{recipe_cooking_time_minutes}} mins</span></span>
     </div>
     {{! title }}
-    <h3 class="recipe-card-title">{{ recipe_title }}</h3>
+    
+    <h3 class="recipe-card-title"><a class="recipe-card-title-link" href="/recipe/{{ id }}">{{ recipe_title }}</a></h3>
     {{! bio }}
     <p class="recipe-card-bio">{{ recipe_summary }}</p>
-    <h3 class="recipe-card-comments">{{ comments.length }} Comments</h3>
+
+    
+    <h3 class="recipe-card-comments"><a class="recipe-card-title-link" href="/recipe/{{ id }}">{{ comments.length }} Comments</a></h3>
 
   </div>
 </article>
