@@ -66,10 +66,20 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/update-recipe/:id", upload, async (req, res) => {
+  console.log(req.body);
   try {
     const updateRecipe = await Recipe.update(
-      { recipe_title: req.body.recipe_title },
+      {
+        recipe_title: req.body.recipe_title,
+        recipe_cooking_time_hours: req.body.recipe_hours,
+        recipe_cooking_time_minutes: req.body.recipe_mins,
+        recipe_serves: req.body.recipe_serves,
+        recipe_summary: req.body.recipe_summary,
+        recipe_ingredients: req.body.recipe_ingredients,
+        recipe_method: req.body.recipe_method,
+        recipe_image: req.file.path,
+      },
       { where: { id: req.params.id } }
     );
     res.status(200).json(updateRecipe);

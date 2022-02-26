@@ -4,24 +4,21 @@ const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 module.exports = router;
 
-
 router.get("/", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
-    return;
-  }
-  res.render("login");
-})
-
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/feed");
     return;
   }
   res.render("login");
 });
 
-;
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/feed");
+    return;
+  }
+  res.render("login");
+});
 
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
@@ -31,26 +28,28 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// ----------------------------------------------------------- dashboard start 
+// ----------------------------------------------------------- feed start
 
-router.get("/dashboard", withAuth, async (req, res) => {
+router.get("/feed", withAuth, async (req, res) => {
   try {
-    const recipeCards = (await Recipe.findAll({
-      include: [{ model: User}, { model: Comments}],
-    })).map((recipeCard) => recipeCard.get({ plain: true }));
-    res.render("dashboard", {recipeCards, logged_in: req.session.logged_in})
+    const recipeCards = (
+      await Recipe.findAll({
+        include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
 // ------------------------------------------------------------------------------- dashboard end
 
-// --------------------------------------------------------------------------------- added logged in. 
+// --------------------------------------------------------------------------------- added logged in.
 
 router.get("/add-recipe", withAuth, async (req, res) => {
   try {
-    res.render("add-recipe", { logged_in: req.session.logged_in} );
+    res.render("add-recipe", { logged_in: req.session.logged_in });
   } catch (err) {
     res.sendStatus(500).send(err);
   }
@@ -130,6 +129,15 @@ router.get("/edit-profile", withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.sendStatus(500).send(err);
+  }
+});
+
+router.get("/edit-recipe/:id", async (req, res) => {
+  try {
+    const recipe = (await Recipe.findByPk(req.params.id)).get({ plain: true });
+    res.render("update-recipe", { ...recipe, loggedIn: req.session.loggedIn });
+  } catch (err) {
     res.sendStatus(500).send(err);
   }
 });
