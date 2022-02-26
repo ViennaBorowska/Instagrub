@@ -37,15 +37,16 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/add-recipe", upload, async (req, res) => {
+  console.log(req.body);
   try {
     const newRecipe = await Recipe.create({
-      recipe_title: req.body.recipeName,
-      recipe_cooking_time_hours: req.body.recipeCookingTimeHours,
-      recipe_cooking_time_minutes: req.body.recipeCookingTimeMins,
-      recipe_serves: req.body.recipeServes,
-      recipe_summary: req.body.recipeSummary,
-      recipe_ingredients: req.body.recipeIngredientsArr,
-      recipe_method: req.body.recipeMethodsArr,
+      recipe_title: req.body.recipe_title,
+      recipe_cooking_time_hours: req.body.recipe_hours,
+      recipe_cooking_time_minutes: req.body.recipe_mins,
+      recipe_serves: req.body.recipe_serves,
+      recipe_summary: req.body.recipe_summary,
+      recipe_ingredients: req.body.recipe_ingredients,
+      recipe_method: req.body.recipe_method,
       recipe_image: req.file.path,
     });
     res.status(200).json(newRecipe);
