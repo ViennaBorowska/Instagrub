@@ -71,7 +71,7 @@ router.get("/user", withAuth, async (req, res) => {
     const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
-      ...user,
+      ...user, logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
