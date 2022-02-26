@@ -118,11 +118,21 @@ body {
   background-color: var(--go-btn-hover);
 }
 
+.singup-link-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .signup-link {
   color: black;
   transition: 0.15s ease-in-out;
   text-decoration: none;
 }
+
+
 
 .login-detail {
   visibility: visible;
@@ -171,6 +181,8 @@ body {
 .logo-container-login {
   margin-bottom: 20px;
 }
+
+
 
 /* ----------------------------------- media queries */
 

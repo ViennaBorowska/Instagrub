@@ -1,25 +1,12 @@
 <section class="dashboard-holder">
-
   <article class="recommended-options">
     <h1>hello</h1>
   </article>
-
-  {{!-- {{> recipe-cards }} --}}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  {{> image-recipe-cards-modal }}
-  
-
-  
+  {{#each recipeCards as |recipeCard| }}
+  {{> recipe-cards recipeCard}}
+  {{/each}}
 </section>
 
-{{! <span class="heart-icon-full"><i class="fas fa-heart"></i><span class="recipe-icon-likes-text">30
-        likes</span></span> }}
 
-  <script src="/js/modal.js"></script>
+{{! <span class="heart-icon-full"><i class="fas fa-heart"></i><span class="recipe-icon-likes-text">30
+    likes</span></span> }}

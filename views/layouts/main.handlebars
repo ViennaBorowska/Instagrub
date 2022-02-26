@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="/css/signup.css">
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/recipe-card.css">
-    <link rel="stylesheet" href="/css/image-recipe-cards-modal.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -30,7 +29,8 @@
     {{#if logged_in}}
      <header>
       <nav class="nav">
-        <div class="logo-container"><img src="" alt="" />
+        
+        <a class="instagrub-link" href="/dashboard"><div class="logo-container"><img src="" alt="" />
           <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In  -->
           <svg
             class="logo"
@@ -62,7 +62,9 @@
             </g>
           </svg>
           <h1 class="title-logo">InstaGrub</h1>
-        </div>
+        </div></a>
+        
+        
         <div class="link-container">
 
           {{!-- ----------------------------------- search  --}}
@@ -72,8 +74,8 @@
           </div>
 
           {{!-- ---------------- search end --}}
-          <button class="btn add-recipe-btn"><i class="fa-solid fa-plus"></i>
-            Add recipe</button>
+
+          <a class="btn add-recipe-btn add-recipe-link " href="/add-recipe"><i class="fa-solid fa-plus"></i>Add recipe</a>
           <div class="hamburger-container">
 
             <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In  -->

@@ -39,8 +39,10 @@ ol li {
   margin-bottom: 0.5rem;
 }
 
+/* changed to black  */
+
 a {
-  color: chocolate;
+  color: black;
 }
 
 .single-recipe-box {
