@@ -35,7 +35,7 @@ const newRecipeHandler = async (event) => {
       body: formData,
     });
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/feed");
     } else {
       alert(response.statusText);
     }

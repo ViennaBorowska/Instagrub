@@ -1,0 +1,89 @@
+<div class="add-recipe-container">
+  <section class="add-recipe-header">
+    <h1>Update your recipe</h1>
+    <p>Edit the below information and click update recipe</p>
+  </section>
+  <form id="myForm" name="myForm">
+    <section class="add-recipe-form">
+      <p class="input-title">RECIPE IMAGE</p>
+      <input type="file" class="file-upload" id="myFile" name="recipe_image" />
+      <p class="input-title">RECIPE NAME</p>
+      <input
+        type="text"
+        class="add-recipe-name"
+        id="add-recipe-name"
+        placeholder="E.g. Salmon Pesto Pasta"
+        name="recipe_title"
+        value="{{this.recipe_title}}"
+      />
+      <p class="input-title">TOTAL TIME</p>
+      <p class="sub-text">What is the total recipe time for both prep and
+        cooking?</p>
+      <div class="cooking-time-wrapper">
+        <input
+          type="number"
+          class="add-recipe-cooking-time-hours"
+          id="add-recipe-cooking-time-hours"
+          name="recipe_hours"
+          value="{{this.recipe_cooking_time_hours}}"
+        />
+        <label class="cooking-time-hours">hours</label>
+        <input
+          type="number"
+          class="add-recipe-cooking-time-mins"
+          id="add-recipe-cooking-time-mins"
+          name="recipe_mins"
+          value="{{this.recipe_cooking_time_minutes}}"
+        />
+        <label class="cooking-time-mins">minutes</label>
+      </div>
+      <p class="input-title">PORTIONS</p>
+      <p class="sub-text">How many people does the recipe serve?</p>
+      <input
+        type="number"
+        class="add-recipe-serves"
+        id="add-recipe-serves"
+        name="recipe_serves"
+        value="{{this.recipe_serves}}"
+      />
+      <p class="input-title">SUMMARY</p>
+      <p class="sub-text">Give a brief overview of the recipe.</p>
+      <textarea
+        type="text"
+        class="add-recipe-summary"
+        id="add-recipe-summary"
+        name="recipe_summary"
+      >{{this.recipe_summary}}</textarea>
+      <p class="input-title">INGREDIENTS</p>
+      <p class="sub-text">Remember to add the amount and unit. To add more
+        ingredients, use the + button.</p>
+      <div class="recipe-ingredients-container">
+        {{#each this.recipe_ingredients}}
+          <input
+            type="text"
+            class="add-recipe-ingredients"
+            id="add-recipe-ingredients"
+            name="recipe_ingredients"
+            placeholder="E.g. 75g Penne Pasta"
+            value="{{this}}"
+          />
+        {{/each}}
+      </div>
+      <p class="input-title">METHOD</p>
+      <p class="sub-text">To add more steps, use the + button.</p>
+      <div class="recipe-method-container">
+        {{#each this.recipe_method}}
+          <textarea
+            class="add-recipe-method-step"
+            id="add-recipe-method-step"
+            name="recipe_method"
+            placeholder="E.g. Step one: "
+          >{{this}}</textarea>
+        {{/each}}
+      </div>
+    </section>
+  </form>
+  <button class="update-recipe">Update recipe</button>
+</div>
+
+<script src="/js/update-recipe.js"></script>
