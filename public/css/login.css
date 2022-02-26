@@ -92,14 +92,6 @@ body {
   color: rgb(68, 68, 68);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  outline-offset: 0px;
-  outline: none;
-  background-color: rgb(184, 184, 184);
-}
-
 .login-card {
   display: flex;
   flex-direction: column;
