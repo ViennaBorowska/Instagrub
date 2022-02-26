@@ -11,23 +11,21 @@ loginEl.addEventListener("click", async (event) => {
     .getElementById("login-password-input")
     .value.trim();
 
-    const userNameEL = document.getElementById('login-username-input').value.trim()
-    const passWordEl = document.getElementById('login-password-input').value.trim()
-
-    if (userNameEL && passWordEl) {
-        const res = await fetch('api/users/login', {
-            method: "POST",
-            body: JSON.stringify({
-                username: userNameEL,
-                password: passWordEl
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        })
-        if (res.ok) {
-            // alert("Login successful");
-            location.reload();
-            document.location.replace('/feed');
-        } else {
-            alert("Password or username are incorrect. Please try again");
-        }
+  if (userNameEL && passWordEl) {
+    const res = await fetch("api/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        username: userNameEL,
+        password: passWordEl,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (res.ok) {
+      // alert("Login successful");
+      location.reload();
+      document.location.replace("/feed");
+    } else {
+      alert("Password or username are incorrect. Please try again");
+    }
+  }
 });
