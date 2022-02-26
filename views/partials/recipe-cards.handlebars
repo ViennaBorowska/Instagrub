@@ -1,42 +1,50 @@
-{{! recipe card ---------------------------------------------}}
+{{! recipe card -------------------------------------------}}
 <article class="recipe-card">
-  {{! card header ---------------------------------------}}
+  {{! card header -------------------------------------}}
   <div class="recipe-card-header">
     <h3 class="recipe-card-author">
-      <span class="chef-icon"><i
-          class="fa-solid fa-utensils"
-        ></i></span> {{ user.username }}
+      <span class="chef-icon"><i class="fa-solid fa-utensils"></i></span>
+      {{user.username}}
     </h3>
   </div>
-  {{!card image ------------------------------------------------}}
+  {{!card image ----------------------------------------------}}
   <div class="recipe-card-img-holder">
-    <a href="/recipe/{{ id }}"><img
-      class="recipe-card-img"
-      src="../../uploads/{{ recipe_image }}"
-      alt="picture of pancakes"
-    /></a>
-    
+    <a href="/recipe/{{id}}"><img
+        class="recipe-card-img"
+        src="../../uploads/{{recipe_image}}"
+        alt="picture of pancakes"
+      /></a>
+
   </div>
-  {{! card body -------------------------------------------------------}}
+  {{! card body -----------------------------------------------------}}
   <div class="recipe-card-body">
-    {{! icons -------------------------------------------------------}}
+    {{! icons -----------------------------------------------------}}
     <div class="recipe-card-icon-holder">
       <span class="heart-icon-outline"><i class="far fa-heart"></i><span
           class="recipe-icon-likes-text"
         >30 likes</span></span>
       <span class="timer-icon"><i class="fa-solid fa-clock"></i><span
           class="timer-icon-text"
-        > {{ recipe_cooking_time_hours }} Hours  {{recipe_cooking_time_minutes}} mins</span></span>
+        >
+          {{recipe_cooking_time_hours}}
+          Hours
+          {{recipe_cooking_time_minutes}}
+          mins</span></span>
     </div>
     {{! title }}
-    
-    <h3 class="recipe-card-title"><a class="recipe-card-title-link" href="/recipe/{{ id }}">{{ recipe_title }}</a></h3>
-    {{! bio }}
-    <p class="recipe-card-bio">{{ recipe_summary }}</p>
 
-    
-    <h3 class="recipe-card-comments"><a class="recipe-card-title-link" href="/recipe/{{ id }}">{{ comments.length }} Comments</a></h3>
+    <h3 class="recipe-card-title"><a
+        class="recipe-card-title-link"
+        href="/recipe/{{id}}"
+      >{{recipe_title}}</a></h3>
+    {{! bio }}
+    <p class="recipe-card-bio">{{recipe_summary}}</p>
+
+    <h3 class="recipe-card-comments"><a
+        class="recipe-card-title-link"
+        href="/recipe/{{id}}"
+      >{{comments.length}} Comments</a></h3>
 
   </div>
 </article>
-{{! recipe card end -----------------------------------------------------}}
+{{! recipe card end ---------------------------------------------------}}

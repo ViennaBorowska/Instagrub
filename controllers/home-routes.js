@@ -70,7 +70,8 @@ router.get("/user", withAuth, async (req, res) => {
     const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
-      ...user, logged_in: req.session.logged_in
+      ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -126,6 +127,7 @@ router.get("/edit-profile", withAuth, async (req, res) => {
 
     return res.render("profile-edit", {
       ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
