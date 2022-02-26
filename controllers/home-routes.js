@@ -4,14 +4,13 @@ const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 module.exports = router;
 
-
 router.get("/", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/dashboard");
     return;
   }
   res.render("login");
-})
+});
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
@@ -21,8 +20,6 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-;
-
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -31,31 +28,33 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// ----------------------------------------------------------- dashboard start 
+// ----------------------------------------------------------- dashboard start
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const recipeCards = (await Recipe.findAll({
-      include: [{ model: User}, { model: Comments}],
-    })).map((recipeCard) => recipeCard.get({ plain: true }));
-    res.render("dashboard", {recipeCards, logged_in: req.session.logged_in})
+    const recipeCards = (
+      await Recipe.findAll({
+        include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
   } catch (err) {
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
 // ------------------------------------------------------------------------------- dashboard end
 
-// --------------------------------------------------------------------------------- added logged in. 
+// --------------------------------------------------------------------------------- added logged in.
 
 router.get("/add-recipe", withAuth, async (req, res) => {
   try {
-    res.render("add-recipe", { logged_in: req.session.logged_in} );
+    res.render("add-recipe", { logged_in: req.session.logged_in });
   } catch (err) {
     res.sendStatus(500).send(err);
   }
 });
-
+/* -----User Profile Page -----*/
 router.get("/user", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
@@ -72,6 +71,7 @@ router.get("/user", withAuth, async (req, res) => {
 
     return res.render("profile", {
       ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -117,6 +117,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
   }
 });
 
+/* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
@@ -127,6 +128,7 @@ router.get("/edit-profile", withAuth, async (req, res) => {
 
     return res.render("profile-edit", {
       ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
