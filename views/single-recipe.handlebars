@@ -3,7 +3,7 @@
     <div class="recipe-image-box">
       <img
         class="recipe-image"
-        src="/uploads/{{recipe_image}}"
+        src="/{{recipe_image}}"
         alt="Recipe image"
       />
     </div>
@@ -51,6 +51,7 @@
     </div>
     <div class="top-rhs" id="overview-link">
       <h1 class="recipe-title">{{recipe_title}}</h1>
+       <span class="like-icon"><i class="far fa-heart fa-2x"></i> 11 </span>
       <h3 class="recipe-author">
         By
         <a href="/user/{{user.id}}" id="recipe-user-name">
@@ -68,26 +69,25 @@
       <div class="recipe-summary">
         <p class="recipe-summary-body">
           <div class="summary-title-holder">
-            <h4>SUMMARY</h4>
+            <h4 class="section-title">SUMMARY</h4>
           </div>
           "{{recipe_summary}}"
         </p>
       </div>
     </div>
     <br />
-  </section>
   <section class="recipe-bottom">
     <div class="ingredients" id="ingredients-link">
-      <div class="ingredients-title-holder">
-        <h4>INGREDIENTS</h4>
+        <div class="ingredients-container">
+          <h4 class="section-title">INGREDIENTS</h4>
+        <ul class="ingredients-list">
+          {{#each recipe_ingredients}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
       </div>
-
-      <ul class="ingredients-list">
-        {{#each recipe_ingredients}}
-          <li>{{this}}</li>
-        {{/each}}
-      </ul>
     </div>
+    
     <div class="nutrition-container">
       <div class="nutrition-title">
       <h3>Nutrition per serving</h3>
@@ -103,7 +103,7 @@
     <div class="method-comment-row">
     <div class="recipe-method" id="method-link">
       <div class="method-container">
-      <h4>METHOD</h4>
+      <h4 class="section-title">METHOD</h4>
       <ol class="method-list">
         {{#each recipe_method}}
           <li> <br />
@@ -113,7 +113,7 @@
       </div>
     </div>
     <div class="comments-partials">
-      <h4>COMMENTS</h4>
+      <h4 class="section-title">COMMENTS</h4>
        {{#each comments as |comment|}}
         {{> comment-cards }}
     {{/each}}

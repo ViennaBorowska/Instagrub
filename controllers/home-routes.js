@@ -6,7 +6,7 @@ module.exports = router;
 
 router.get("/", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/feed");
     return;
   }
   res.render("login");
@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/feed");
     return;
   }
   res.render("login");
@@ -28,9 +28,9 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-// ----------------------------------------------------------- dashboard start
+// ----------------------------------------------------------- feed start
 
-router.get("/dashboard", withAuth, async (req, res) => {
+router.get("/feed", withAuth, async (req, res) => {
   try {
     const recipeCards = (
       await Recipe.findAll({
@@ -132,6 +132,15 @@ router.get("/edit-profile", withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.sendStatus(500).send(err);
+  }
+});
+
+router.get("/edit-recipe/:id", async (req, res) => {
+  try {
+    const recipe = (await Recipe.findByPk(req.params.id)).get({ plain: true });
+    res.render("update-recipe", { ...recipe, loggedIn: req.session.loggedIn });
+  } catch (err) {
     res.sendStatus(500).send(err);
   }
 });
