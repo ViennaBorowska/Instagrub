@@ -20,7 +20,7 @@ loginEl.addEventListener('click', async (event) => {
         if (res.ok) {
             // alert("Login successful");
             location.reload();
-            document.location.replace('/dashboard');
+            document.location.replace('/feed');
         } else {
             alert("Password or username are incorrect. Please try again");
         }

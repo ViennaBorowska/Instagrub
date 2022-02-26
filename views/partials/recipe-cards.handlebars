@@ -7,12 +7,19 @@
           class="fa-solid fa-utensils"
         ></i></span> {{ user.username }}
     </h3>
+    <div class="badge-icon-holder">
+    <i class="fas fa-seedling"></i>
+    <i class="fa-solid fa-fish"></i>
+    <i class="fa-solid fa-shrimp"></i>
+   <i class="fa-solid fa-pepper-hot"></i>
+    
+    </div>
   </div>
   {{!card image ------------------------------------------------}}
   <div class="recipe-card-img-holder">
     <a href="/recipe/{{ id }}"><img
       class="recipe-card-img"
-      src="../../uploads/{{ recipe_image }}"
+      src="../../{{ recipe_image }}"
       alt="picture of pancakes"
     /></a>
     
