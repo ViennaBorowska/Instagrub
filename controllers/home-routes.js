@@ -54,7 +54,7 @@ router.get("/add-recipe", withAuth, async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
-
+/* -----User Profile Page -----*/
 router.get("/user", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
@@ -70,7 +70,8 @@ router.get("/user", withAuth, async (req, res) => {
     const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
-      ...user, logged_in: req.session.logged_in
+      ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -116,6 +117,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
   }
 });
 
+/* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
@@ -126,6 +128,7 @@ router.get("/edit-profile", withAuth, async (req, res) => {
 
     return res.render("profile-edit", {
       ...user,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);

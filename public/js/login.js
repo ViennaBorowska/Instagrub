@@ -1,9 +1,15 @@
-// the path might need checking. 
-const loginEl = document.getElementById('login-btn-id');
+// the path might need checking.
+const loginEl = document.getElementById("login-btn-id");
 
-loginEl.addEventListener('click', async (event) => {
+loginEl.addEventListener("click", async (event) => {
+  event.preventDefault();
 
-    event.preventDefault()
+  const userNameEL = document
+    .getElementById("login-username-input")
+    .value.trim();
+  const passWordEl = document
+    .getElementById("login-password-input")
+    .value.trim();
 
     const userNameEL = document.getElementById('login-username-input').value.trim()
     const passWordEl = document.getElementById('login-password-input').value.trim()
@@ -24,5 +30,4 @@ loginEl.addEventListener('click', async (event) => {
         } else {
             alert("Password or username are incorrect. Please try again");
         }
-    }
 });

@@ -55,8 +55,7 @@
         name="recipe_summary"
       >{{this.recipe_summary}}</textarea>
       <p class="input-title">INGREDIENTS</p>
-      <p class="sub-text">Remember to add the amount and unit. To add more
-        ingredients, use the + button.</p>
+      <p class="sub-text">Remember to add the amount and unit.</p>
       <div class="recipe-ingredients-container">
         {{#each this.recipe_ingredients}}
           <input
@@ -70,7 +69,6 @@
         {{/each}}
       </div>
       <p class="input-title">METHOD</p>
-      <p class="sub-text">To add more steps, use the + button.</p>
       <div class="recipe-method-container">
         {{#each this.recipe_method}}
           <textarea
