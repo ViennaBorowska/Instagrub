@@ -47,10 +47,10 @@ router.get("/user", withAuth, async (req, res) => {
       ],
     });
 
-    //const user = userFromDb.get({ plain: true });
+    const user = userFromDb.get({ plain: true });
 
     return res.render("profile", {
-      ...User,
+      ...user,
     });
   } catch (err) {
     console.log(err);
@@ -98,8 +98,17 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
 
 router.get("/edit-profile", withAuth, async (req, res) => {
   try {
-    res.render("profile-edit");
+    const userFromDb = await User.findOne({
+      where: { id: req.session.user_id },
+    });
+
+    const user = userFromDb.get({ plain: true });
+
+    return res.render("profile-edit", {
+      ...user,
+    });
   } catch (err) {
+    console.log(err);
     res.sendStatus(500).send(err);
   }
 });

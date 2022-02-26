@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const multer = require("multer");
 const { User, Recipe } = require("../../models");
 
 router.get("/", async (req, res) => {
@@ -51,10 +52,10 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-    req.session.destroy(() => {
-      res.status(204).end();
-      console.log("logged out of session");
-    });
+  req.session.destroy(() => {
+    res.status(204).end();
+    console.log("logged out of session");
+  });
 });
 
 router.delete("/:id", async (req, res) => {
@@ -79,6 +80,62 @@ router.put("/:id", async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
+/*----Profile Update ----*/
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+
+router.post(
+  "/updateProfile",
+  upload.single("profile-file"),
+  async (req, res) => {
+    console.log("INSIDE");
+    try {
+      const updateUser = await User.update(
+        {
+          first_name: req.body.firstname,
+          last_name: req.body.lastname,
+          user_bio: req.body.userbio,
+        },
+        { where: { id: req.session.user_id } }
+      );
+      if (req.file) {
+        const updateUserImage = await User.update(
+          {
+            user_image: req.file.originalname,
+          },
+          { where: { id: req.session.user_id } }
+        );
+      }
+      /*const userFromDb = await User.findOne({
+        where: { id: req.session.user_id },
+        include: [
+          {
+            model: Recipe,
+            attributes: ["id", "recipe_title", "recipe_image"],
+          },
+        ],
+      });
+
+      const user = userFromDb.get({ plain: true });
+
+      return res.render("profile", {
+        ...user,
+      });*/
+
+      return res.redirect("/user");
+    } catch (err) {
+      console.log(err);
+      res.sendStatus(500).send(err);
+    }
+  }
+);
 
 module.exports = router;
