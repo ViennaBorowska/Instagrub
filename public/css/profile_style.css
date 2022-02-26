@@ -33,6 +33,10 @@
   background-color: var(--go-btn);
 }
 
+.btn__decoration {
+  text-decoration: none;
+}
+
 .btn {
   border: none;
   height: 30px;
@@ -229,4 +233,100 @@
 .image-style {
   border-color: blueviolet;
   border-width: thick;
+}
+
+.profile__edit__content {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  border-radius: 1em;
+  margin: 20px;
+  padding: 20px;
+  background-color: silver;
+  box-shadow: 0px 13px 10px black;
+  height: 100%;
+  width: 60%;
+}
+
+.edit__profile__header {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.update__image {
+  margin-left: 100px;
+  width: 40%;
+  margin-top: 50px;
+  display: flex;
+}
+
+.profile__update__form {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*align-items: center;*/
+  color: #555555;
+  background: #eeeeee;
+  font-size: 0.8em;
+  border-radius: 15px;
+}
+
+.update__input {
+  /*margin-top: 30px;*/
+  display: flex;
+  margin: auto;
+  margin-left: 50px;
+}
+
+.profile__update {
+  width: 75%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.profile__update p {
+  font-weight: bold;
+}
+
+.update-input {
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.update-textarea {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.update__profile__btn {
+  float: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile__info {
+    flex-direction: column;
+  }
+
+  .profile__middle {
+    width: 240px;
+    margin: auto;
+  }
+
+  .profile__middle p {
+    margin-right: 20px;
+  }
+
+  .profile__right {
+    margin-top: 20px;
+  }
+
+  .card {
+    margin-left: 0px;
+  }
 }

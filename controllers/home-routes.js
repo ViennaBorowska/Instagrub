@@ -88,16 +88,22 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
         attributes: [
           "id",
           "recipe_title",
+          "recipe_cooking_time_hours",
           "recipe_cooking_time_minutes",
           "recipe_serves",
           "recipe_summary",
           "recipe_ingredients",
           "recipe_method",
+          "recipe_image",
         ],
         include: [
           {
             model: User,
-            attributes: ["username"],
+            attributes: ["username", "first_name", "last_name"],
+          },
+          {
+            model: Comments,
+            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
           },
         ],
       })
@@ -108,5 +114,22 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).send(err);
+  }
+});
+
+router.get("/edit-profile", withAuth, async (req, res) => {
+  try {
+    const userFromDb = await User.findOne({
+      where: { id: req.session.user_id },
+    });
+
+    const user = userFromDb.get({ plain: true });
+
+    return res.render("profile-edit", {
+      ...user,
+    });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500).send(err);
   }
 });

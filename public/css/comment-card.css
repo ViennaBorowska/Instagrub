@@ -1,0 +1,68 @@
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comment-card {
+  margin: 20px;
+  padding: 20px;
+  width: 75%;
+  min-height: 50px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  background: radial-gradient(chocolate, rgb(248, 192, 153));
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.comment-card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.comment-icon {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.comment-body {
+  padding: 15px;
+  font-size: 0.6rem;
+}
+
+.comment-title {
+  font-family: sans-serif;
+  grid-row: 3/4;
+  font-weight: 400;
+  color: black;
+}
+
+.comment-header h4 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.6rem;
+}
+
+.comment-header {
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.method-comment-row {
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 1024px) {
+  .method-comment-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}

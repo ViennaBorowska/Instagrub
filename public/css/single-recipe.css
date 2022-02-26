@@ -4,12 +4,8 @@ body {
 }
 
 h4 {
-  padding-bottom: 0.25px;
-  border-bottom-style: dashed;
-  border-bottom-width: 1px;
-  width: fit-content;
-  margin-bottom: 4px;
-  text-align: center;
+  font-family: "Abril Fatface", serif;
+  font-size: 1.5em;
 }
 
 ul li {
@@ -78,17 +74,18 @@ a {
 }
 
 .recipe-image {
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
-  width: 100%;
-  height: 100%;
   border-radius: 25px;
-  box-shadow: 0px 13px 10px black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .recipe-nav-wrap {
   height: 54px;
   margin: 5px 0 1rem;
-  width: 40%;
+  width: 100%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -158,6 +155,7 @@ a {
 }
 
 .recipe-author {
+  font-family: "Abril Fatface", serif;
   font-style: italic;
 }
 
@@ -178,9 +176,18 @@ a {
 
 .recipe-summary {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   font-style: italic;
   font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+.summary-title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-style: normal;
 }
 
 .recipe-summary-body {
@@ -197,21 +204,28 @@ a {
   align-items: center;
 }
 
+.ingredients-title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ingredients {
   border: 3px dashed black;
   padding: 10px;
-  width: 400px;
+  width: 30%;
   margin: 50px;
   text-align: left;
 }
 
 .nutrition-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 1px solid black;
   width: 50%;
   padding: 5px;
   font-family: "Courier New", Courier, monospace;
+  margin: 20px;
 }
 
 .nutrition-container h3 {
@@ -222,18 +236,49 @@ a {
   padding: 5px;
 }
 
+.nutrition-body {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.method-comment-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .recipe-method {
-  border: 2px solid black;
   width: 50%;
   padding: 5px;
 }
 
-.method-list li {
+.recipe-method {
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.method-container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.method-list li {
+  align-items: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nutrition-body {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .single-recipe-box {
+    width: 100%;
+  }
   .recipe-top {
     flex-direction: column;
     width: 100%;
