@@ -1,16 +1,18 @@
-.comments {
+.comments-partials {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .comment-card {
-  margin: 20px;
-  padding: 20px;
+  margin: 5px;
+  padding: 10px;
   width: 75%;
-  min-height: 50px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
   border-style: outset;
   border-color: orange;
   border-radius: 10px;
@@ -33,6 +35,15 @@
 .comment-body {
   padding: 15px;
   font-size: 0.6rem;
+}
+
+.comment-pp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .comment-title {

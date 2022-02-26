@@ -50,9 +50,9 @@ a {
   padding: 20px;
   background-color: whitesmoke;
   text-align: center;
-
   height: 100%;
   width: 90%;
+  margin-top: 70px;
 }
 
 .single-recipe-box > * {
@@ -298,6 +298,7 @@ a {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    justify-content: space-around;
   }
 
   .recipe-image-box {
