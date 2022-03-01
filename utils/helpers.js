@@ -24,4 +24,8 @@ const formatDate = (date) => moment(date).format("M/D/YYYY, HH:mm");
 //   },
 // };
 
+const helpers = {
+  formatDate,
+};
+
 module.exports = helpers;

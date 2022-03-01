@@ -47,7 +47,10 @@ router.post("/add-recipe", upload, async (req, res) => {
       recipe_summary: req.body.recipe_summary,
       recipe_ingredients: req.body.recipe_ingredients,
       recipe_method: req.body.recipe_method,
-      recipe_tags: req.body.recipe_tags,
+      recipe_diet: req.body.recipe_diet,
+      recipe_spice: req.body.recipe_spice,
+      recipe_ingredients_tags: req.body.recipe_ingredients_tags,
+      recipe_cuisine: req.body.recipe_cuisine,
       recipe_likes: 0,
       recipe_image: req.file.path,
     });
