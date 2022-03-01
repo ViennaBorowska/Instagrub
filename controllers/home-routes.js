@@ -95,19 +95,14 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           "recipe_ingredients",
           "recipe_method",
           "recipe_image",
+          "user_id",
         ],
-        include: [
-          {
-            model: User,
-            attributes: ["username", "first_name", "last_name"],
-          },
-          {
-            model: Comments,
-            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-          },
-        ],
+
+        include: [{ model: User }, { model: Comments, include: [User] }],
       })
     ).get({ plain: true });
+
+    console.log(recipe);
     res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
@@ -116,6 +111,8 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+// Delete single recipe
 
 /* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {
