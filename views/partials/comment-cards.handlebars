@@ -1,35 +1,15 @@
-{{!-- <div class="comment-card">
-  <div class="comment-header">
-    <img class="comment-pp" src="/{{user.user_image}}" alt="people" />
-    <h4>{{formatDate createdAt}}</h4>
-  </div>
-  <div class="comment-body"><h4 class="comment-title">{{comment_desc}}</h4>
-  </div>
+<section class="comment-card-holder">
+  {{! comment card  }}
+  <article class="comment-card">
+    {{! comment card header }}
+    <div class="comment-card-header">
+      <h2 class="comment-card-username">{{user.username}}
 
-  <div class="comment-footer">
-    <span class="like-icon"><i class="far fa-heart"></i></span>
-    <h4 class="comment-author">{{user.username}}</h4>
-    {{log User.username}}
-  </div>
-</div> --}}
-
-<div class="a-box">
-  <div class="img-container">
-    <div class="img-inner">
-      <div class="inner-skew">
-        <img src="/{{user.user_image}}" />
-      </div>
+      </h2>
+      <h2 class="comment-card-date"> {{format_date createdAt}} </h2>
     </div>
-  </div>
-  <div class="text-container">
-    <h3><a
-        href="/user/{{user.id}}"
-        id="comment-user-link"
-      >{{user.username}}</a></h3>
-    <h4>{{formatDate createdAt}}</h4>
-    <div>
-      {{comment_desc}}
-    </div>
-    <span class="like-icon"><i class="far fa-heart"></i></span>
-  </div>
-</div>
+    {{! comment card body }}
+    <p class="comment-card-body">"{{comment_desc}}"</p>
+  </article>
+  {{! comment card end }}
+</section>

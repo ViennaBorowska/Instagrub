@@ -12,6 +12,14 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
+// -----------------------------
+
+// router.get("/new-recipe", (req, res) => {
+//   res.render("single-recipe-new", { logged_in: req.session.logged_in });
+// });
+
+// --------------------------------------
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/feed");
@@ -34,7 +42,18 @@ router.get("/feed", withAuth, async (req, res) => {
   try {
     const recipeCards = (
       await Recipe.findAll({
-        include: [{ model: User }, { model: Comments }],
+        include: [
+          {
+            model: User,
+            attributes: ["username", "first_name", "last_name"],
+          },
+
+          {
+            model: Comments,
+            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+            include: { model: User, attributes: ["username"] },
+          },
+        ],
       })
     ).map((recipeCard) => recipeCard.get({ plain: true }));
     res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
@@ -79,7 +98,6 @@ router.get("/user/:id", withAuth, async (req, res) => {
   }
 });
 
-// Get Single Recipe
 router.get("/recipe/:id", withAuth, async (req, res) => {
   try {
     const recipe = (
@@ -97,8 +115,18 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           "recipe_image",
           "user_id",
         ],
+        include: [
+          {
+            model: User,
+            attributes: ["username", "first_name", "last_name"],
+          },
 
-        include: [{ model: User }, { model: Comments, include: [User] }],
+          {
+            model: Comments,
+            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+            include: { model: User, attributes: ["username"] },
+          },
+        ],
       })
     ).get({ plain: true });
 
