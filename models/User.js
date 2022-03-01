@@ -39,6 +39,7 @@ User.init(
     user_image: {
       type: DataTypes.TEXT,
       allowNull: true,
+      defaultValue: "default-profile.png",
     },
   },
   {
