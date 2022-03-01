@@ -24,7 +24,7 @@ signupEL.addEventListener("click", async (event) => {
     });
 
     if (newUser.ok) {
-      document.location.replace("/feed");
+      document.location.replace("/edit-profile");
     } else {
       alert("sign up failed");
     }

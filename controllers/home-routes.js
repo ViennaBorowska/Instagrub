@@ -31,8 +31,8 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
+  if (req.session.logged_in) {
+    res.redirect("/edit-profile", { logged_in: req.session.logged_in });
     return;
   }
   res.render("signup");
@@ -64,23 +64,6 @@ router.get("/feed", withAuth, async (req, res) => {
   }
 });
 
-router.get("/recipes/:tag", withAuth, async (req, res) => {
-  try {
-    const recipeCards = (
-      await Recipe.findAll({
-        where: {
-          [Op.or]: [{ recipe_tags: { [Op.contains]: req.params.tag } }],
-        },
-        // include: [{ model: User }, { model: Comments }],
-      })
-    ).map((recipeCard) => recipeCard.get({ plain: true }));
-    res.json(recipeCards);
-    // res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // ------------------------------------------------------------------------------- dashboard end
 
 // --------------------------------------------------------------------------------- added logged in.
@@ -92,11 +75,36 @@ router.get("/add-recipe", withAuth, async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
+
+/* -----My Profile Page -----*/
+router.get("/my-profile/", withAuth, async (req, res) => {
+  try {
+    const userFromDb = await User.findOne({
+      where: { id: req.session.user_id },
+      include: [
+        {
+          model: Recipe,
+          attributes: ["id", "recipe_title", "recipe_image"],
+        },
+      ],
+    });
+
+    const user = userFromDb.get({ plain: true });
+
+    return res.render("profile", {
+      ...user,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500).send(err);
+  }
+});
+
 /* -----User Profile Page -----*/
 router.get("/user/:id", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
-      where: { id: req.session.user_id },
       include: [
         {
           model: Recipe,
@@ -190,22 +198,22 @@ router.get("/edit-recipe/:id", async (req, res) => {
 });
 
 //-----------Search by particular user -----------
-router.get("/user/:id/recipes", withAuth, async (req, res) => {
-  try {
-    const recipeCards = (
-      await Recipe.findAll({
-        where: { user_id: req.params.id },
-        include: [{ model: User }, { model: Comments }],
-      })
-    ).map((recipeCard) => recipeCard.get({ plain: true }));
-    res.render("searchresult", {
-      recipeCards,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get("/user/:id/recipes", withAuth, async (req, res) => {
+//   try {
+//     const recipeCards = (
+//       await Recipe.findAll({
+//         where: { user_id: req.params.id },
+//         include: [{ model: User }, { model: Comments }],
+//       })
+//     ).map((recipeCard) => recipeCard.get({ plain: true }));
+//     res.render("searchresult", {
+//       recipeCards,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //-----------Search by ingredients -----------
 router.get("/recipes/ingredient/:keyword", withAuth, async (req, res) => {
@@ -227,6 +235,24 @@ router.get("/recipes/ingredient/:keyword", withAuth, async (req, res) => {
       recipeCards,
       logged_in: req.session.logged_in,
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//-----------Filter by ingredients -----------
+router.get("/recipes/:tag", withAuth, async (req, res) => {
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: {
+          [op.or]: [{ recipe_cuisine: { [op.contains]: req.params.tag } }],
+        },
+        // include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.json(recipeCards);
+    // res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }

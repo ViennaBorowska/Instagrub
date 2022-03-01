@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const multer = require("multer");
 const { User, Recipe } = require("../../models");
+const path = require("path");
 
 router.get("/", async (req, res) => {
   try {
@@ -13,8 +14,18 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.create(req.body);
-    res.status(200).json(newUser);
+    const dbUserData = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.logged_in = true;
+
+      res.json({ user: dbUserData, message: "You are now logged in!" });
+    });
   } catch (err) {
     console.log(err);
     res.sendStatus(500).send(err);
@@ -68,26 +79,14 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
-  try {
-    const updateUser = await User.update(
-      { user_bio: req.body.user_bio },
-      { where: { id: req.params.id } }
-    );
-    res.status(200).json(updateUser);
-  } catch (err) {
-    console.log(err);
-    res.sendStatus(500).send(err);
-  }
-});
 /*----Profile Update ----*/
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./uploads");
+    cb(null, "uploads");
   },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 const upload = multer({ storage: storage });
@@ -130,12 +129,25 @@ router.post(
         ...user,
       });*/
 
-      return res.redirect("/user");
+      return res.redirect("/my-profile");
     } catch (err) {
       console.log(err);
       res.sendStatus(500).send(err);
     }
   }
 );
+
+router.put("/:id", upload.single("profile-file"), async (req, res) => {
+  try {
+    const updateUser = await User.update(
+      { user_bio: req.body.user_bio },
+      { where: { id: req.params.id } }
+    );
+    res.status(200).json(updateUser);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500).send(err);
+  }
+});
 
 module.exports = router;
