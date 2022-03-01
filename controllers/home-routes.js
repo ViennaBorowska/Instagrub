@@ -2,7 +2,8 @@ const router = require("express").Router();
 const { route } = require("express/lib/application");
 const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
-const { Op } = require("sequelize");
+const Sequelize = require("sequelize");
+const op = Sequelize.Op;
 module.exports = router;
 
 router.get("/", (req, res) => {
@@ -185,5 +186,48 @@ router.get("/edit-recipe/:id", async (req, res) => {
     res.render("update-recipe", { ...recipe, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.sendStatus(500).send(err);
+  }
+});
+
+//-----------Search by particular user -----------
+router.get("/user/:id/recipes", withAuth, async (req, res) => {
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: { user_id: req.params.id },
+        include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.render("searchresult", {
+      recipeCards,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//-----------Search by ingredients -----------
+router.get("/recipes/ingredient/:keyword", withAuth, async (req, res) => {
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: {
+          [op.or]: [
+            { recipe_title: { [op.like]: "%" + req.params.keyword + "%" } },
+            /*{
+              recipe_ingredients: { [op.like]: "%" + req.params.keyword + "%" },
+            },*/
+          ],
+        },
+        include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.render("searchresult", {
+      recipeCards,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
