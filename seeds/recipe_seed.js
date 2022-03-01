@@ -13,7 +13,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
   {
@@ -28,7 +28,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
   {
@@ -43,7 +43,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
   {
@@ -58,7 +58,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
   {
@@ -73,7 +73,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
   {
@@ -88,7 +88,7 @@ const recipeData = [
       "Cut up tomatoes",
       "sprinkle on pasta and tomatoes.",
     ],
-    recipe_image: "1645705404056.jpeg",
+    recipe_image: "uploads/1645705404056.jpeg",
     user_id: 1,
   },
 ];
