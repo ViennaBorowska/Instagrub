@@ -55,7 +55,7 @@ router.get("/add-recipe", withAuth, async (req, res) => {
   }
 });
 /* -----User Profile Page -----*/
-router.get("/user", withAuth, async (req, res) => {
+router.get("/user/:id", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
       where: { id: req.session.user_id },
