@@ -1,7 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
 
+:root {
+  --go-btn: rgb(76, 197, 76);
+  --go-btn-hover:rgb(101, 223, 101);
+  --main-background: rgb(226, 226, 226);
+}
+
 .add-recipe-container {
   margin-top: 4em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .add-recipe-header {
@@ -9,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding: 1em 2em;
+  padding: 1.5em 2em;
 }
 
 .add-recipe-form {
@@ -103,25 +112,32 @@
 
 .submit-recipe {
   width: 100%;
-  background-color: #04aa6d;
+  background-color: var(--go-btn);
   border: none;
   color: white;
   padding: 1em 1.2em;
   margin: 1em 0;
   cursor: pointer;
   border-radius: 1em;
+  transition: ease-in-out 0.2s;
+}
+
+.submit-recipe:hover {
+  background-color: var(--go-btn-hover);
 }
 
 .update-recipe {
   width: 100%;
-  background-color: #04aa6d;
+  background-color: var(--go-btn);
   border: none;
   color: white;
   padding: 1em 1.2em;
   margin: 1em 0;
   cursor: pointer;
   border-radius: 1em;
+  transition: ease-in-out 0.2s;
 }
+
 
 .add-recipe-summary {
   width: 100%;
@@ -174,13 +190,24 @@
 
 @media (max-width: 1350px) {
   .add-recipe-form {
-    width: 60vw;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media (max-width: 900px) {
   .add-recipe-form {
     width: 70vw;
+   }
+
+  .add-recipe-container {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -188,11 +215,36 @@
   .add-recipe-form {
     width: 80vw;
   }
+
+  .add-recipe-container {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submit-recipe {
+    width: 90%;
+  }
+  
 }
 
 @media (max-width: 600px) {
   .add-recipe-form {
     width: 90vw;
-    margin-left: 1.5em;
+    
+  }
+
+  .add-recipe-container {
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .submit-recipe {
+    width: 90%;
   }
 }

@@ -14,6 +14,14 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
+// -----------------------------
+
+// router.get("/new-recipe", (req, res) => {
+//   res.render("single-recipe-new", { logged_in: req.session.logged_in });
+// });
+
+// --------------------------------------
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/feed");
@@ -36,10 +44,38 @@ router.get("/feed", withAuth, async (req, res) => {
   try {
     const recipeCards = (
       await Recipe.findAll({
-        include: [{ model: User }, { model: Comments }],
+        include: [
+          {
+            model: User,
+            attributes: ["username", "first_name", "last_name"],
+          },
+
+          {
+            model: Comments,
+            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+            include: { model: User, attributes: ["username"] },
+          },
+        ],
       })
     ).map((recipeCard) => recipeCard.get({ plain: true }));
     res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/recipes/:tag", withAuth, async (req, res) => {
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: {
+          [Op.or]: [{ recipe_tags: { [Op.in]: req.params.tag } }],
+        },
+        // include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.json(recipeCards);
+    // res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -57,7 +93,7 @@ router.get("/add-recipe", withAuth, async (req, res) => {
   }
 });
 /* -----User Profile Page -----*/
-router.get("/user", withAuth, async (req, res) => {
+router.get("/user/:id", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
       where: { id: req.session.user_id },
@@ -81,7 +117,6 @@ router.get("/user", withAuth, async (req, res) => {
   }
 });
 
-// Get Single Recipe
 router.get("/recipe/:id", withAuth, async (req, res) => {
   try {
     const recipe = (
@@ -97,19 +132,24 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           "recipe_ingredients",
           "recipe_method",
           "recipe_image",
+          "user_id",
         ],
         include: [
           {
             model: User,
             attributes: ["username", "first_name", "last_name"],
           },
+
           {
             model: Comments,
             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+            include: { model: User, attributes: ["username"] },
           },
         ],
       })
     ).get({ plain: true });
+
+    console.log(recipe);
     res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
@@ -118,6 +158,8 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+// Delete single recipe
 
 /* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {

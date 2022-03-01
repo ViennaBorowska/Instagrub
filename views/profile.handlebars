@@ -2,7 +2,7 @@
     <section class="content__top">
         <div class="profile__info">
           <div class="profile__left">
-            <img src="/uploads/{{user_image}}" alt="Profile Image" class="profile__image">
+            <img src="/{{user_image}}" alt="Profile Image" class="profile__image">
           </div>
           <div class="profile__middle">
             <h1 class="profile-title">{{first_name}} {{last_name}}</h1>
@@ -16,14 +16,14 @@
     </section>
 
     <div class="content__middle">
-      <h3>My Recipes</h3>
+      <h3 class="my-recipes-title">My Recipes</h3>
       <hr>
     </div>
 
     <section class="content__bottom">
       {{#each recipes as |recipe|}}
          <div class="card">
-            <img class="card__image" src="{{recipe.recipe_image}}" alt="">
+            <img class="card__image" src="/{{recipe.recipe_image}}" alt="">
             <div class="card__content">
                 <p>
                   {{recipe.recipe_title}}

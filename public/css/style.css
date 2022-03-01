@@ -24,6 +24,10 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
   }
+
+  a {
+    color: black;
+  }
   
   .body-container {
     display: flex;
@@ -105,7 +109,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 120px;
+    /* width: 120px; */
     font-family: "Roboto", sans-serif;
     transition: 0.15s ease-in-out;
   }
@@ -256,7 +260,6 @@
   }
   
   .nav-list-container {
-    margin-bottom: 150px;
     margin-left: 10%;
   }
   
@@ -265,7 +268,7 @@
   }
   
   .nav-list > li {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
   
   .nav-links1,
@@ -304,7 +307,7 @@
     transition: 0.15s ease-in-out;
     background-color: rgb(255, 65, 65);
     font-size: 30px;
-    margin-left: 30px;
+
   }
   
   .nav-links3:hover {
@@ -342,7 +345,14 @@
     display: flex;
     gap: 10px;
     background-color: var(--go-btn);
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    transition: ease-in-out 0.2s;
+    align-items: center;
+    justify-content: center;  
   }
+  
   
   .add-recipe-btn:hover {
     display: flex;
@@ -372,3 +382,33 @@
     text-decoration: none;
     color: black;
   }
+
+  @media screen and (max-width: 760px) {
+    .add-recipe-btn {
+      width: 40px;
+    }
+    .add-recipe-button-text {
+      visibility: hidden;
+      display: none;
+    }
+
+    .nav {
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 10% 0 10%;
+      gap: 10px;
+    }
+
+    .title-logo {
+      visibility: hidden;
+      display: none;
+      
+    }
+
+    .link-container {
+      gap: 20px
+    }
+
+  
+  }
+  
