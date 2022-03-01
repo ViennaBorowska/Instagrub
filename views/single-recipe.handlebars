@@ -79,17 +79,6 @@
     </div>
     <br />
   <section class="recipe-bottom">
-    {{!-- <div class="ingredients" id="ingredients-link">
-        <div class="ingredients-container">
-          <h4 class="section-title">INGREDIENTS</h4>
-        <ul class="ingredients-list">
-          {{#each recipe_ingredients}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-    </div> --}}
-
     <div class="ingredients" id="ingredients-link">
       <div class="ingredients-container">
        <h4 class="section-title">INGREDIENTS</h4>
@@ -128,7 +117,28 @@
         </div>  
     <div class="comments-partials">
       <h4 class="section-title">COMMENTS</h4>
-       {{#each comments as |comment|}}
+      {{#if logged_in}}
+         <form id="new-comment-form" class="" action="">
+      <label class="form-label" for="comment-form-input"></label>
+      <textarea
+        class="comment-input"
+        name="comment-content"
+        id="comment-input"
+        cols="30"
+        rows="10"
+        placeholder="Enter your comment here"
+      ></textarea>
+
+      <button id="add-comment-btn" type="click" class="btn comment-btn">Add Comment</button>
+    </form>
+      {{else}}
+      <div class="login-btn-holder">
+        <a class="btn login-comment-btn" href="/login">Login to comment</a>
+        </div>
+      {{/if}}
+       {{#each comments as |comment|}} 
+       {{ log comment }}
+       {{ log User}}
         {{> comment-cards }}
     {{/each}}
     </div>
@@ -137,13 +147,14 @@
   </section>
 
 <footer>
-  <div class="id-select-span">{{ id }}</div>
+  {{!-- <div class="id-select-span">{{ id }}</div> --}}
   {{#if logged_in}}
-  <button class="btn" id="update-recipe-btn" type="click"> Update</button>
-  <button class="btn" id="delete-recipe-btn" type="click" > Delete </button>
+  <button class="btn update-recipe-btn" id="update-recipe-btn" type="click"> <a href="/edit-recipe/{{id}}">Update</a> </button>
+  <button class="btn delete-recipe-btn" id="delete-recipe-btn" type="click" > Delete </button>
   {{/if}}
 </footer> 
 </div>
 
 
-<script src="/js/single-recipe.js"></script>
+<script src="/js/delete-recipe.js"></script>
+<script src="/js/comment.js"></script>
