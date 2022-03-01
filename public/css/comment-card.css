@@ -87,25 +87,21 @@ body {
   text-align: center;
 }
 
-.a-box:hover {
-  transform: scale(1.03);
-}
-
 .img-container {
-  height: 170px;
-  width: 175px;
+  height: 150px;
+  width: 150px;
   overflow: hidden;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 50%;
   display: inline-block;
 }
 
 .img-container img {
-  transform: skew(0deg, -13deg);
-  height: 230px;
-  margin: -35px 0px 0px -70px;
+  /* transform: skew(0deg, -13deg); */
+  height: 150px;
+  /* margin: -35px 0px 0px -70px; */
 }
 
-.inner-skew {
+/* .inner-skew {
   display: inline-block;
   border-radius: 20px;
   overflow: hidden;
@@ -116,7 +112,7 @@ body {
   background: #c8c2c2;
   height: 250px;
   width: 200px;
-}
+} */
 
 .text-container {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
