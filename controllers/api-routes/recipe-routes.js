@@ -47,6 +47,8 @@ router.post("/add-recipe", upload, async (req, res) => {
       recipe_summary: req.body.recipe_summary,
       recipe_ingredients: req.body.recipe_ingredients,
       recipe_method: req.body.recipe_method,
+      recipe_tags: req.body.recipe_tags,
+      recipe_likes: 0,
       recipe_image: req.file.path,
     });
     res.status(200).json(newRecipe);
@@ -83,6 +85,19 @@ router.put("/update-recipe/:id", upload, async (req, res) => {
       { where: { id: req.params.id } }
     );
     res.status(200).json(updateRecipe);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500).send(err);
+  }
+});
+
+router.put("/update-recipe-likes/:id", async (req, res) => {
+  try {
+    const updateRecipeLikes = await Recipe.increment(
+      { recipe_likes: 1 },
+      { where: { id: req.params.id } }
+    );
+    res.status(200).json(updateRecipeLikes);
   } catch (err) {
     console.log(err);
     res.sendStatus(500).send(err);

@@ -44,6 +44,14 @@ Recipe.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    recipe_likes: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    recipe_tags: {
+      type: DataTypes.JSON,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

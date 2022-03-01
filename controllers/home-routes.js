@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { route } = require("express/lib/application");
 const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
+const { Op } = require("sequelize");
 module.exports = router;
 
 router.get("/", (req, res) => {
@@ -38,6 +39,23 @@ router.get("/feed", withAuth, async (req, res) => {
       })
     ).map((recipeCard) => recipeCard.get({ plain: true }));
     res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/recipes/:tag", withAuth, async (req, res) => {
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: {
+          [Op.or]: [{ recipe_tags: { [Op.in]: req.params.tag } }],
+        },
+        // include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.json(recipeCards);
+    // res.render("dashboard", { recipeCards, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
