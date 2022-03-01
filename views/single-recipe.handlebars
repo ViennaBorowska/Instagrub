@@ -3,7 +3,7 @@
     <div class="recipe-image-box">
       <img
         class="recipe-image"
-        src="/uploads/{{recipe_image}}"
+        src="/{{recipe_image}}"
         alt="Recipe image"
       />
     </div>
@@ -137,8 +137,6 @@
         </div>
       {{/if}}
        {{#each comments as |comment|}} 
-       {{ log comment }}
-       {{ log User}}
         {{> comment-cards }}
     {{/each}}
     </div>
@@ -147,7 +145,6 @@
   </section>
 
 <footer>
-  {{!-- <div class="id-select-span">{{ id }}</div> --}}
   {{#if logged_in}}
   <button class="btn update-recipe-btn" id="update-recipe-btn" type="click"> <a href="/edit-recipe/{{id}}">Update</a> </button>
   <button class="btn delete-recipe-btn" id="delete-recipe-btn" type="click" > Delete </button>
