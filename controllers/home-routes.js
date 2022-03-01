@@ -18,8 +18,6 @@ router.get("/", (req, res) => {
 //   res.render("single-recipe-new", { logged_in: req.session.logged_in });
 // });
 
-
-
 // --------------------------------------
 
 router.get("/login", (req, res) => {
@@ -76,7 +74,7 @@ router.get("/add-recipe", withAuth, async (req, res) => {
   }
 });
 /* -----User Profile Page -----*/
-router.get("/user", withAuth, async (req, res) => {
+router.get("/user/:id", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
       where: { id: req.session.user_id },
@@ -115,6 +113,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           "recipe_ingredients",
           "recipe_method",
           "recipe_image",
+          "user_id",
         ],
         include: [
           {
@@ -130,6 +129,8 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
         ],
       })
     ).get({ plain: true });
+
+    console.log(recipe);
     res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
@@ -138,6 +139,8 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+// Delete single recipe
 
 /* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {

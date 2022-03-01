@@ -1,25 +1,15 @@
 <section class="comment-card-holder">
-{{!-- comment card  --}}
-<article class="comment-card">
-{{!-- comment card header --}}
-<div class="comment-card-header">
-  <h2 class="comment-card-username">{{ user.username }}
+  {{! comment card  }}
+  <article class="comment-card">
+    {{! comment card header }}
+    <div class="comment-card-header">
+      <h2 class="comment-card-username">{{user.username}}
 
-  </h2>
-  <h2 class="comment-card-date"> {{format_date createdAt}} </h2>
-</div>
-{{!-- comment card body --}}
-<p class="comment-card-body">"{{comment_desc}}"</p>
-</article>
-{{!-- comment card end --}}
+      </h2>
+      <h2 class="comment-card-date"> {{format_date createdAt}} </h2>
+    </div>
+    {{! comment card body }}
+    <p class="comment-card-body">"{{comment_desc}}"</p>
+  </article>
+  {{! comment card end }}
 </section>
-
-
-
-
-
-
-
-
-
-
