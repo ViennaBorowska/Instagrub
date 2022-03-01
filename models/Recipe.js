@@ -48,7 +48,19 @@ Recipe.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    recipe_tags: {
+    recipe_diet: {
+      type: DataTypes.JSON,
+      allowNull: true,
+    },
+    recipe_spice: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    recipe_ingredients_tags: {
+      type: DataTypes.JSON,
+      allowNull: true,
+    },
+    recipe_cuisine: {
       type: DataTypes.JSON,
       allowNull: true,
     },

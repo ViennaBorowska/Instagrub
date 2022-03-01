@@ -68,7 +68,7 @@ router.get("/recipes/:tag", withAuth, async (req, res) => {
     const recipeCards = (
       await Recipe.findAll({
         where: {
-          [Op.or]: [{ recipe_tags: { [Op.in]: req.params.tag } }],
+          [Op.or]: [{ recipe_tags: { [Op.contains]: req.params.tag } }],
         },
         // include: [{ model: User }, { model: Comments }],
       })

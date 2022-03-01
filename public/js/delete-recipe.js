@@ -1,5 +1,6 @@
 const deleteRecipeHandler = async (event) => {
   event.preventDefault();
+  console.log("HELLO");
 
   const id = window.location.toString().split("/").pop();
 
@@ -14,7 +15,6 @@ const deleteRecipeHandler = async (event) => {
     alert(response.statusText);
   }
 };
-yt;
 
 document
   .querySelector(".delete-recipe-btn")

@@ -1,11 +1,13 @@
-const commentBtn = document.getElementById("add-comment-btn");
+const commentBtn = document.getElementById("single-recipe-comment-button");
 
 commentBtn.addEventListener("click", async (event) => {
   event.preventDefault();
 
   console.log("add comment button pressed");
 
-  const commentContent = document.getElementById("comment-input").value.trim();
+  const commentContent = document
+    .getElementById("single-recipe-comment-input")
+    .value.trim();
   const recipe_id = window.location.toString().split("/").pop();
 
   const newComment = await fetch("/api/comments", {
