@@ -171,9 +171,9 @@ router.get("/recipes/ingredient/:keyword", withAuth, async (req, res) => {
         where: {
           [op.or]: [
             { recipe_title: { [op.like]: "%" + req.params.keyword + "%" } },
-            {
+            /*{
               recipe_ingredients: { [op.like]: "%" + req.params.keyword + "%" },
-            },
+            },*/
           ],
         },
         include: [{ model: User }, { model: Comments }],
