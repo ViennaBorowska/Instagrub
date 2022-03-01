@@ -4,7 +4,7 @@
   <div class="recipe-card-header">
     <h3 class="recipe-card-author">
       <span class="chef-icon"><i class="fa-solid fa-utensils"></i></span>
-      {{user.username}}
+      {{user.username}} <span class="recipe-card-id-span">ID: {{ id }}</span>
     </h3>
     <div class="badge-icon-holder">
       <i class="fas fa-seedling"></i>
@@ -84,8 +84,8 @@
     {{/each}}
 
 <div class="single-recipe-input-holder">
-    <input class="single-recipe-comment-input" type="text" placeholder="Enter comment">
-<button class="single-recipe-comment-button"><i class="fa-solid fa-comment"></i>comment</button>
+    <input class="single-recipe-comment-input" id="single-recipe-comment-input" type="text" placeholder="Enter comment">
+<button class="single-recipe-comment-button" id="single-recipe-comment-button"><i class="fa-solid fa-comment"></i>comment</button>
 </div>
   </section>
   </div>
