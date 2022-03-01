@@ -30,6 +30,10 @@
         transition: 0.15s ease-in-out;
 }
 
+.title-logo-two {
+  padding-left: 10px;
+}
+
 .signup-link {
     color: black;
     transition: 0.15s ease-in-out;

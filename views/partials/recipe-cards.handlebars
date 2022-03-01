@@ -1,31 +1,42 @@
-{{! recipe card -------------------------------------------}}
+{{! recipe card -----------------------------------------}}
 <article class="recipe-card">
-  {{! card header -------------------------------------}}
+  {{! card header -----------------------------------}}
   <div class="recipe-card-header">
     <h3 class="recipe-card-author">
       <span class="chef-icon"><i class="fa-solid fa-utensils"></i></span>
       {{user.username}}
     </h3>
     <div class="badge-icon-holder">
-    <i class="fas fa-seedling"></i>
-    <i class="fa-solid fa-fish"></i>
-    <i class="fa-solid fa-shrimp"></i>
-   <i class="fa-solid fa-pepper-hot"></i>
-    
+      <i class="fas fa-seedling"></i>
+      <i class="fa-solid fa-fish"></i>
+      <i class="fa-solid fa-shrimp"></i>
+      <i class="fa-solid fa-pepper-hot"></i>
+
     </div>
   </div>
-  {{!card image ----------------------------------------------}}
+  {{!card image --------------------------------------------}}
   <div class="recipe-card-img-holder">
-    <a href="/recipe/{{ id }}"><img
-      class="recipe-card-img"
-      src="../../{{ recipe_image }}"
-      alt="picture of pancakes"
-    /></a>
-    
+    <a href="/recipe/{{id}}"><img
+        class="recipe-card-img"
+        src="../../{{recipe_image}}"
+        alt="picture of pancakes"
+      /></a>
+
   </div>
-  {{! card body -----------------------------------------------------}}
+
+  {{! tag holder  ------------------------------------------------}}
+  <div class="recipe-card-tag-holder">
+    <ul class="recipe-tag-list-holder">
+      <li class="recipe-tag-list-item"> Italian</li>
+      <li class="recipe-tag-list-item"> Italian</li>
+      <li class="recipe-tag-list-item"> Italian</li>
+      <li class="recipe-tag-list-item"> Italian</li>
+      <li class="recipe-tag-list-item"> Italian</li>
+    </ul>
+  </div>
+  {{! card body ---------------------------------------------------}}
   <div class="recipe-card-body">
-    {{! icons -----------------------------------------------------}}
+    {{! icons ---------------------------------------------------}}
     <div class="recipe-card-icon-holder">
       <span class="heart-icon-outline"><i class="far fa-heart"></i><span
           class="recipe-icon-likes-text"
@@ -39,19 +50,44 @@
           mins</span></span>
     </div>
     {{! title }}
-
     <h3 class="recipe-card-title"><a
         class="recipe-card-title-link"
         href="/recipe/{{id}}"
       >{{recipe_title}}</a></h3>
     {{! bio }}
-    <p class="recipe-card-bio">{{recipe_summary}}</p>
+    <p class="recipe-card-bio">{{recipe_summary}}
+      a quick easy time a quick easy time a</p>
 
-    <h3 class="recipe-card-comments"><a
-        class="recipe-card-title-link"
+    <h3 class="recipe-card-comments"><button
+        class="recipe-card-title-link trigger"
         href="/recipe/{{id}}"
-      >{{comments.length}} Comments</a></h3>
+      >{{comments.length}} Comments</button></h3>
 
   </div>
+
 </article>
-{{! recipe card end ---------------------------------------------------}}
+{{! recipe card end -------------------------------------------------}}
+
+{{! modal }}
+
+
+<div class="modal">
+  <div class="modal-content">
+    <div class="recipe-modal-holder">
+<section class="single-recipe-comments-container">
+  <div class="modal-header-container">
+  <button class="close-button"> <span class="close-icon"><i class="fa-solid fa-circle-xmark"></i></span> </button>
+      </div>
+      <h2 class="single-recipe-subheader comment-subheader modal-subheader">Comments</h2>
+{{#each comments as |comment|}}
+        {{> comment-cards }}
+    {{/each}}
+
+<div class="single-recipe-input-holder">
+    <input class="single-recipe-comment-input" type="text" placeholder="Enter comment">
+<button class="single-recipe-comment-button"><i class="fa-solid fa-comment"></i>comment</button>
+</div>
+  </section>
+  </div>
+</div>
+</div>

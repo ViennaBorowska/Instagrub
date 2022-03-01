@@ -34,6 +34,10 @@ body {
   align-items: center;
 }
 
+.title-logo-two {
+  padding-left: 10px;
+}
+
 .login-card-holder {
   flex-basis: 30%;
   display: flex;
@@ -123,7 +127,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
 }
 
 .signup-link {

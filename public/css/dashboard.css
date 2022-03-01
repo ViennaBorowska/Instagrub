@@ -31,6 +31,15 @@
   margin-top: 30px;
 }
 
+.trigger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 1100px) {
   .dashboard-holder {
     width: 100%;
@@ -41,4 +50,11 @@
   
   .recommended-options {
     margin-top: 50px;  }
+}
+
+@media screen and (max-width: 520px) {
+  .recommended-options {
+    width: 100%;
+    margin: 35px 10px 0px 10px;
+  }
 }
