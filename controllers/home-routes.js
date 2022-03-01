@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { route } = require("express/lib/application");
 const { User, Recipe, Comments } = require("../models");
 const withAuth = require("../utils/auth");
+const Sequelize = require("sequelize");
+const op = Sequelize.Op;
 module.exports = router;
 
 router.get("/", (req, res) => {
