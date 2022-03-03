@@ -214,17 +214,18 @@
  display: flex;
  justify-content: flex-start;
  align-items: center;
- gap: 10px;
+ gap: 5px;
  width: 100%;
  padding-left: 20px;
  padding-right: 20px;
+ flex-wrap: wrap;
 }
 
 .recipe-tag-list-item {
   font-size: 10px;
   height: 20px;
   width: auto;
-  background-color: rgb(252, 76, 76);
+  background-color: rgb(3, 185, 100);
   color: rgb(243, 243, 243);
   display: flex;
   align-items: center;
