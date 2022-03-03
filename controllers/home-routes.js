@@ -130,18 +130,6 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     const recipe = (
       await Recipe.findOne({
         where: { id: req.params.id },
-        attributes: [
-          "id",
-          "recipe_title",
-          "recipe_cooking_time_hours",
-          "recipe_cooking_time_minutes",
-          "recipe_serves",
-          "recipe_summary",
-          "recipe_ingredients",
-          "recipe_method",
-          "recipe_image",
-          "user_id",
-        ],
         include: [
           {
             model: User,
