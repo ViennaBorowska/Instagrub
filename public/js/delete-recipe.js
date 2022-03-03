@@ -17,5 +17,5 @@ const deleteRecipeHandler = async (event) => {
 };
 
 document
-  .querySelector(".delete-recipe-btn")
+  .querySelector("#delete-recipe-btn")
   .addEventListener("click", deleteRecipeHandler);

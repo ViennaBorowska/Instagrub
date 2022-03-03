@@ -84,7 +84,7 @@ router.get("/my-profile/", withAuth, async (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ["id", "recipe_title", "recipe_image"],
+          attributes: ["id", "recipe_title", "recipe_image", "recipe_likes"],
         },
       ],
     });
@@ -105,6 +105,7 @@ router.get("/my-profile/", withAuth, async (req, res) => {
 router.get("/user/:id", withAuth, async (req, res) => {
   try {
     const userFromDb = await User.findOne({
+      where: { id: req.params.id },
       include: [
         {
           model: Recipe,
@@ -115,9 +116,15 @@ router.get("/user/:id", withAuth, async (req, res) => {
 
     const user = userFromDb.get({ plain: true });
 
+    let sameUser = false;
+    if (req.params.id == req.session.user_id) {
+      sameUser = true;
+    }
+
     return res.render("profile", {
       ...user,
       logged_in: req.session.logged_in,
+      sameUser: sameUser,
     });
   } catch (err) {
     console.log(err);
@@ -202,31 +209,6 @@ router.get("/edit-recipe/:id", async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-
-//-----------Search by ingredients -----------
-router.get("/recipes/ingredient/:keyword", withAuth, async (req, res) => {
-  try {
-    const recipeCards = (
-      await Recipe.findAll({
-        where: {
-          [op.or]: [
-            { recipe_title: { [op.like]: "%" + req.params.keyword + "%" } },
-            /*{
-              recipe_ingredients: { [op.like]: "%" + req.params.keyword + "%" },
-            },*/
-          ],
-        },
-        include: [{ model: User }, { model: Comments }],
-      })
-    ).map((recipeCard) => recipeCard.get({ plain: true }));
-    res.render("searchresult", {
-      recipeCards,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 //-----------Filter by ingredients -----------
 router.get("/recipes/:tag", withAuth, async (req, res) => {

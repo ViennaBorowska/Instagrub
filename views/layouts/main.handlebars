@@ -95,11 +95,13 @@
           <div class="link-container">
 
             {{! ----------------------------------- search  }}
-            <div class="nav-search-holder">
-              <button class="search-icon-holder">
-                <i class="fa-solid fa-magnifying-glass"></i></button>
-              <input class="nav-search-bar" type="text" />
-            </div>
+            <form id="search-form" name="search-form">
+              <div class="nav-search-holder">
+                <button class="search-icon-holder">
+                  <i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="nav-search-bar" type="text" name="searchInput" id="searchInput" />
+              </div>
+            </form>
 
             <a class="add-recipe-link" href="/add-recipe">
 
@@ -204,6 +206,7 @@
     <script src="/js/menu.js"></script>
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
+      <script src="/js/search.js"></script>
     {{/if}}
   </body>
 </html>

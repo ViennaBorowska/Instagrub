@@ -47,12 +47,21 @@ Recipe.init(
     recipe_likes: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },
-    recipe_diet: {
-      type: DataTypes.JSON,
-      allowNull: true,
+      defaultValue: 0,
     },
     recipe_spice: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    recipe_veg: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    recipe_fish: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    recipe_shellfish: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -61,7 +70,7 @@ Recipe.init(
       allowNull: true,
     },
     recipe_cuisine: {
-      type: DataTypes.JSON,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     recipe_jam: {
