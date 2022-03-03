@@ -9,8 +9,10 @@
             <p class="profile-user-bio">{{user_bio}}</p>
           </div>
           <div class="profile__right">
+            {{#if sameUser}}
             <a href="/edit-profile" class="btn__decoration"><button class="btn profile__update__btn"><i class="fa-solid fa-pen-to-square"></i>
             Edit</button></a>
+            {{/if}}
           </div>
       </div>
     </section>

@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const { Recipe } = require("../../models");
+const { Recipe, User, Comments } = require("../../models");
 const multer = require("multer");
 const path = require("path");
+const Sequelize = require("sequelize");
+const op = Sequelize.Op;
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -108,6 +110,40 @@ router.put("/update-recipe-likes/:id", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.sendStatus(500).send(err);
+  }
+});
+
+//-----------Search by ingredients -----------
+router.post("/search", async (req, res) => {
+  console.log("INSIDE");
+  console.log(req.body);
+  console.log(req.body.searchInput);
+
+  try {
+    const recipeCards = (
+      await Recipe.findAll({
+        where: {
+          [op.or]: [
+            { recipe_title: { [op.like]: "%" + req.body.searchInput + "%" } },
+
+            {
+              recipe_ingredients: {
+                [op.like]: "%" + req.body.searchInput + "%",
+              },
+            },
+          ],
+        },
+        include: [{ model: User }, { model: Comments }],
+      })
+    ).map((recipeCard) => recipeCard.get({ plain: true }));
+    res.status(200).json(recipeCards);
+    // res.render("searchresult", {
+    //   recipeCards,
+    //   logged_in: req.session.logged_in,
+    // });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
