@@ -32,6 +32,8 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_ingredients_tags: ["Pasta"],
     recipe_cuisine: ["Italian"],
+    recipe_jam:
+      "https://www.youtube.com/watch?v=OnFlx2Lnr9Q&ab_channel=NMCatalogue",
   },
   {
     recipe_title: "Fish Tandoori",
@@ -69,6 +71,8 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_ingredients_tags: ["Seafood"],
     recipe_cuisine: ["Indian"],
+    recipe_jam:
+      "https://www.youtube.com/watch?v=2v2CNGiK7sQ&ab_channel=HilarySummers-Topic",
   },
   {
     recipe_title: "Har Gau Dimsum",
@@ -103,6 +107,8 @@ const recipeData = [
     recipe_diet: ["Pescatarian", "Sugar-free"],
     recipe_ingredients_tags: ["Seafood"],
     recipe_cuisine: ["Asian", "Chinese"],
+    recipe_jam:
+      "https://www.youtube.com/watch?v=rGh97zsBfWk&ab_channel=stelioscockey",
   },
   {
     recipe_title: "Singapore noodles",
@@ -133,6 +139,8 @@ const recipeData = [
     recipe_diet: ["Lactose-free"],
     recipe_ingredients_tags: ["Pork", "Seafood", "Vegetables"],
     recipe_cuisine: ["Asian"],
+    recipe_jam:
+      "https://www.youtube.com/watch?v=IBmj7_TiLkM&ab_channel=Monkey-Topic",
   },
   {
     recipe_title: "Classic Butter Chicken",
@@ -273,6 +281,8 @@ const recipeData = [
     recipe_diet: ["Gluten-free"],
     recipe_ingredients_tags: ["Beef"],
     recipe_cuisine: ["American", "European"],
+    recipe_jam:
+      "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
   },
   {
     recipe_title: "Chocolate Cake",
@@ -317,6 +327,8 @@ const recipeData = [
     user_id: 7,
     recipe_likes: 5,
     recipe_cuisine: ["American", "English"],
+    recipe_jam:
+      "https://www.youtube.com/watch?v=xHotXbGZiFY&ab_channel=boburnham",
   },
 ];
 
