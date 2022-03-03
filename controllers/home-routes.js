@@ -191,7 +191,10 @@ router.get("/edit-profile", withAuth, async (req, res) => {
 router.get("/edit-recipe/:id", async (req, res) => {
   try {
     const recipe = (await Recipe.findByPk(req.params.id)).get({ plain: true });
-    res.render("update-recipe", { ...recipe, loggedIn: req.session.loggedIn });
+    res.render("update-recipe", {
+      ...recipe,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.sendStatus(500).send(err);
   }
