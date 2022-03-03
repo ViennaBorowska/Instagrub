@@ -6,7 +6,6 @@
 
 
 
-<button class="recipe-like">LIKE</button>
   <nav class="single-recipe-nav">
     <a class="single-recipe-nav-item" href="#summary-scroll">Overview</a>
     <a class="single-recipe-nav-item" href="#ingredients-scroll">Ingredients</a>
@@ -19,6 +18,7 @@
     <a class="single-recipe-author-link" href="/user/{{user_id}}"><h2
         class="single-recipe-author"
       >{{user.first_name}} {{user.last_name}}</h2></a>
+      <div class="single-recipe-button-container"><button class="recipe-like single-recipe-nav-item"><i class="fas fa-heart single-recipe-heart-icon"></i></button>0 LIKES</div>
   </div>
 
   <section class="single-recipe-details">
@@ -58,6 +58,7 @@
     </div>
   </section>
 
+
   <section class="recipe-buttons">
   
   {{!-- {{#if isUserId}} --}}
@@ -78,6 +79,14 @@
     <input class="single-recipe-comment-input" id="single-recipe-comment-input" type="text" placeholder="Enter comment">
 <button class="single-recipe-comment-button" id="single-recipe-comment-button"><i class="fa-solid fa-comment"></i>comment</button>
 </div>
+  </section>
+
+  </section>
+  <section class="single-recipe-footer">
+  {{#if logged_in}}
+  <button class="single-recipe-update-recipe-btn" id="update-recipe-btn" type="click"> <a class="srubl" href="/edit-recipe/{{id}}">Update Recipe</a> </button>
+  <button class="single-recipe-delete-recipe-btn" id="delete-recipe-btn" type="click" >Delete Recipe </button>
+  {{/if}}
   </section>
 
 <script src="/js/delete-recipe.js"></script>

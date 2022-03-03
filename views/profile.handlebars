@@ -23,15 +23,15 @@
     <section class="content__bottom">
       {{#each recipes as |recipe|}}
          <div class="card">
-            <img class="card__image" src="/{{recipe.recipe_image}}" alt="">
+            <img class="card__image" src="/{{recipe_image}}" alt="">
             <div class="card__content">
                 <p>
-                  {{recipe.recipe_title}}
+                  {{recipe_title}}
                 </p>
             </div>
             <div class="card__info">
               <div>
-               <i class="fa-solid fa-heart"></i>140
+               <i class="fa-solid fa-heart"></i>{{ recipe_likes }}
               </div>
               <div>
                 <a href="/recipe/{{recipe.id}}" class="card__link">View Recipe</a>
