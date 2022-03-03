@@ -7,7 +7,7 @@ const updateRecipeLikesHandler = async (event) => {
       method: "PUT",
     });
     if (response.ok) {
-      document.location.replace("/feed");
+      document.location.reload();
     } else {
       alert(response.statusText);
     }

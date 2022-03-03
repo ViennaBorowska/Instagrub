@@ -90,10 +90,15 @@ router.get("/my-profile/", withAuth, async (req, res) => {
     });
 
     const user = userFromDb.get({ plain: true });
+    let sameUser = false;
+    if (req.session.user_id) {
+      sameUser = true;
+    }
 
     return res.render("profile", {
       ...user,
       logged_in: req.session.logged_in,
+      sameUser,
     });
   } catch (err) {
     console.log(err);
@@ -216,9 +221,11 @@ router.get("/recipes/:tag", withAuth, async (req, res) => {
     const recipeCards = (
       await Recipe.findAll({
         where: {
-          [op.or]: [{ recipe_cuisine: { [op.contains]: req.params.tag } }],
+          [op.or]: [
+            { recipe_cuisine: { [op.like]: "%" + req.params.tag + "%" } },
+          ],
         },
-        // include: [{ model: User }, { model: Comments }],
+        include: [{ model: User }, { model: Comments }],
       })
     ).map((recipeCard) => recipeCard.get({ plain: true }));
     res.json(recipeCards);
