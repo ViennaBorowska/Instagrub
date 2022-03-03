@@ -34,6 +34,42 @@ const userData = [
     user_image: "sample-profile.jpg",
     user_image: "uploads/user4.jpg",
   },
+  {
+    username: "Delia",
+    password: "password",
+    first_name: "Delia",
+    last_name: "Smith",
+    user_bio: "I really like cakes. Sugar is my favourite food.",
+    user_image: "sample-profile.jpg",
+    user_image: "uploads/user4.jpg",
+  },
+  {
+    username: "Gordon",
+    password: "password",
+    first_name: "Gordon",
+    last_name: "Ramsay",
+    user_bio: "I really like pies. Pastry is my favourite food.",
+    user_image: "sample-profile.jpg",
+    user_image: "uploads/user4.jpg",
+  },
+  {
+    username: "Nigella",
+    password: "password",
+    first_name: "Nigella",
+    last_name: "Lawson",
+    user_bio: "I really like rich dishes. Chocolate is my favourite food.",
+    user_image: "sample-profile.jpg",
+    user_image: "uploads/user4.jpg",
+  },
+  {
+    username: "Jamie",
+    password: "password",
+    first_name: "Jamie",
+    last_name: "Oliver",
+    user_bio: "I really like salads. Veg is my favourite food.",
+    user_image: "sample-profile.jpg",
+    user_image: "uploads/user4.jpg",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);
