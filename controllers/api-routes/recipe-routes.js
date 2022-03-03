@@ -49,10 +49,14 @@ router.post("/add-recipe", upload, async (req, res) => {
       recipe_method: req.body.recipe_method,
       recipe_diet: req.body.recipe_diet,
       recipe_spice: req.body.recipe_spice,
+      recipe_veg: req.body.recipe_veg,
+      recipe_fish: req.body.recipe_fish,
+      recipe_shellfish: req.body.recipe_shellfish,
       recipe_ingredients_tags: req.body.recipe_ingredients_tags,
       recipe_cuisine: req.body.recipe_cuisine,
       recipe_likes: 0,
       recipe_image: req.file.path,
+      user_id: req.session.user_id
     });
     res.status(200).json(newRecipe);
   } catch (err) {

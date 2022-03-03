@@ -1,9 +1,7 @@
 <div class="profile__edit__content">
-    <section class="edit__profile__header">
-        <h1>Update Your Profile</h1>
-    </section class="update-mage">
     <form method="POST" action="/api/users/updateProfile" enctype="multipart/form-data">
         <section class="profile__update__form">
+        <h1 class="profile-header-update">Update Your Profile</h1>
             <div class="update__image">
                 <div>
                     <img src="/uploads/{{user_image}}" alt="Profile Image" class="edit__profile__image">
@@ -39,8 +37,8 @@
                 placeholder="E.g. Write something about you."
                 >{{user_bio}}</textarea>
             </div>
-            <div>
-                <input type="submit" class="edit__profile__btn" value="Save Changes">
+            <div class="edit__profile__btn__holder">
+               <button type="submit" class="edit__profile__btn"><i class="fa-solid fa-check"></i>Save Changes</button>
             </div>
         </section> 
          
