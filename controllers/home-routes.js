@@ -90,10 +90,15 @@ router.get("/my-profile/", withAuth, async (req, res) => {
     });
 
     const user = userFromDb.get({ plain: true });
+    let sameUser = false;
+    if (req.session.user_id) {
+      sameUser = true;
+    }
 
     return res.render("profile", {
       ...user,
       logged_in: req.session.logged_in,
+      sameUser,
     });
   } catch (err) {
     console.log(err);
