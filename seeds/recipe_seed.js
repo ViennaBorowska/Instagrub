@@ -31,6 +31,8 @@ const recipeData = [
     recipe_fish: "Fish",
     recipe_ingredients_tags: ["Pasta", "Spicy", "Tasty"],
     recipe_cuisine: "Italian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=OnFlx2Lnr9Q&ab_channel=NMCatalogue",
     user_id: 1,
   },
   {
@@ -68,6 +70,8 @@ const recipeData = [
     recipe_fish: "Fish",
     recipe_ingredients_tags: ["Seafood", "Main", "Pescatarian", "Healthy"],
     recipe_cuisine: "Indian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=2v2CNGiK7sQ&ab_channel=HilarySummers-Topic",
     user_id: 2,
   },
   {
@@ -102,7 +106,10 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_shellfish: "Shellfish",
     recipe_ingredients_tags: ["Seafood", "Tasty", "Hot", "Pork"],
-    recipe_cuisine:"Chinese",
+    recipe_cuisine: "Chinese",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=rGh97zsBfWk&ab_channel=stelioscockey",
+
     user_id: 3,
   },
   {
@@ -134,7 +141,7 @@ const recipeData = [
     recipe_shellfish: "Shellfish",
     recipe_ingredients_tags: ["Seafood", "Noodles", "Hot", "Pork"],
     recipe_cuisine: "Asian",
-    user_id: 4
+    user_id: 4,
   },
   {
     recipe_title: "Classic Butter Chicken",
@@ -189,6 +196,8 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_ingredients_tags: ["Chicken", "Tasty", "Main", "Curry"],
     recipe_cuisine: "Indian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=IBmj7_TiLkM&ab_channel=Monkey-Topic",
     user_id: 5,
   },
   {
@@ -273,8 +282,10 @@ const recipeData = [
     ],
     recipe_image: "uploads/mixmatch-steak.jpg",
     recipe_likes: 1,
-    recipe_ingredients_tags: ["Steak", "Beef", "Main",],
+    recipe_ingredients_tags: ["Steak", "Beef", "Main"],
     recipe_cuisine: "American",
+    recipe_jam:
+      "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
     user_id: 8,
   },
   {
@@ -321,10 +332,11 @@ const recipeData = [
     recipe_ingredients_tags: ["Dessert", "Baked", "Sweet", "Chocolate"],
     recipe_cuisine: "English",
     user_id: 7,
+    recipe_jam:
+      "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
   },
 ];
 
 const seedRecipe = () => Recipe.bulkCreate(recipeData);
 
 module.exports = seedRecipe;
-

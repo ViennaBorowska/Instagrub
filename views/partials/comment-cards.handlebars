@@ -4,12 +4,16 @@
     {{! comment card header }}
     <div class="comment-card-header">
       <div class="name-image-holder">
-      <div class="user-profile-img-holder">
-      <img class="user-profile-img" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="">
-      </div>
+        <div class="user-profile-img-holder">
+          <img
+            class="user-profile-img"
+            src="/{{user.user_image}}"
+            alt="user profile picture"
+          />
+        </div>
         <h2 class="comment-card-username">{{user.username}}</h2>
       </div>
-      
+
       <h2 class="comment-card-date"> {{formatDate createdAt}} </h2>
     </div>
     {{! comment card body }}
