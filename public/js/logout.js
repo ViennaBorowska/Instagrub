@@ -3,7 +3,7 @@ const logoutEl = document.getElementById("logout-btn");
 logoutEl.addEventListener("click", async (event) => {
   event.preventDefault();
 
-  const res = await fetch("api/users/logout", {
+  const res = await fetch("/api/users/logout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
   });
