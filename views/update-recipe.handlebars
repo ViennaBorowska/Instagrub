@@ -55,75 +55,305 @@
         name="recipe_summary"
       >{{this.recipe_summary}}</textarea>
 
-{{!-- ----------------------------- --}}
+      {{! ----------------------------- }}
 
-<p class="input-title">RECIPE DIET</p>
-      <p class="sub-text">Select your recipes dietary preferences.</p>
-      <label for="recipe_diet">Choose a dietary requirement</label>
-      <select name="recipe_diet" id="diet-options">
-        <option name="recipe_diet" value="Vegan">Vegan</option>
-        <option name="recipe_diet" value="Vegetarian">Vegetarian</option>
-        <option name="recipe_diet" value="Halal">Halal</option>
-        <option name="recipe_diet" value="Pescatarian">Pescatarian</option>
-        <option name="recipe_diet" value="Gluten free">Gluten free</option>
-        <option name="recipe_diet" value="Lactose free">Lactose free</option>
-        <option name="recipe_diet" value="Shellfish">Shellfish</option>
-      </select>
+      {{! --------------------------------------------------------------------- }}
+      <p class="input-title">ICONS</p>
+      <p class="sub-text">Tick the boxes below to add the relevant icons to your
+        recipe</p>
 
-      <p class="input-title">RECIPE SPICE</p>
+      <p class="input-title middle-border-update small-margin">RECIPE SPICE</p>
       <p class="sub-text">Check the box if the recipe is spicy.</p>
       <input type="checkbox" id="spice" name="recipe_spice" value="Spice" />
       <label for="spice">Spicy</label>
-      <p class="input-title">RECIPE MAIN INGREDIENTS</p>
-      <p class="sub-text">What are the main ingredients of the recipe?</p>
+
+      <p class="input-title">VEGETARIAN</p>
+      <p class="sub-text">Check the box if the recipe is suitable for
+        Vegetarians.</p>
+      <input type="checkbox" id="recipe_veg" name="recipe_veg" value="Veg" />
+      <label for="recipe_veg">Vegetarian</label>
+
+      <p class="input-title">PESCATARIAN</p>
+      <p class="sub-text">Check the box if the recipe is suitable for
+        Pescatarians.</p>
+      <input type="checkbox" id="recipe_fish" name="recipe_fish" value="Fish" />
+      <label for="recipe_fish">Pescatarian</label>
+
+      <p class="input-title">SHELLFISH</p>
+      <p class="sub-text">Check the box if the recipe contains Shellfish.</p>
       <input
+        class=""
         type="checkbox"
-        id="beef"
-        name="recipe_ingredients_tags"
-        value="Beef"
+        id="recipe_shellfish"
+        name="recipe_shellfish"
+        value="Shellfish"
       />
-      <label for="beef">Beef</label>
-      <input
-        type="checkbox"
-        id="vegetables"
-        name="recipe_ingredients_tags"
-        value="Vegetables"
-      />
-      <label for="vegetables">Vegetables</label>
-      <input
-        type="checkbox"
-        id="pasta"
-        name="recipe_ingredients_tags"
-        value="Pasta"
-      />
-      <label for="pasta">Pasta</label>
-      <input
-        type="checkbox"
-        id="poultry"
-        name="recipe_ingredients_tags"
-        value="Poultry"
-      />
-      <label for="poultry">Poultry</label>
-      <input
-        type="checkbox"
-        id="pork"
-        name="recipe_ingredients_tags"
-        value="Pork"
-      />
-      <label for="pork">Pork</label>
-      <input
-        type="checkbox"
-        id="seafood"
-        name="recipe_ingredients_tags"
-        value="Seafood"
-      />
-      <label for="seafood">Seafood</label>
+      <label for="recipe_shellfish">Shellfish</label>
+      {{! --------------------------------------------------------------------------- }}
+      <p class="input-title middle-border-update">RECIPE TAGS</p>
+      <p class="sub-text">What are the main ingredients/characteristics of your
+        recipe?
+        <span class="recipe-feature-span">MAX 5</span></p>
+
+      {{! ----------------------------------------- }}
+      <div class="container">
+        <ul class="ks-cboxtags">
+          <li><input
+              type="checkbox"
+              id="checkboxOne"
+              name="recipe_ingredients_tags"
+              value="Beef"
+            /><label for="checkboxOne">Beef</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxTwo"
+              name="recipe_ingredients_tags"
+              value="Chicken"
+            /><label for="checkboxTwo">Chicken</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxFifteen"
+              name="recipe_ingredients_tags"
+              value="Vegan"
+            /><label for="checkboxFifteen">Vegan</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxThree"
+              name="recipe_ingredients_tags"
+              value="Vegetarian"
+            /><label for="checkboxThree">Vegetarian</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxFour"
+              name="recipe_ingredients_tags"
+              value="Pasta"
+            /><label for="checkboxFour">Pasta</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxFive"
+              name="recipe_ingredients_tags"
+              value="Pork"
+            /><label for="checkboxFive">Pork</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox6"
+              name="recipe_ingredients_tags"
+              value="Potato"
+            /><label for="checkbox6">Potato</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxSix"
+              name="recipe_ingredients_tags"
+              value="Steak"
+            /><label for="checkboxSix">Steak</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxFourteen"
+              name="recipe_ingredients_tags"
+              value="Seafood"
+            /><label for="checkboxFourteen">Seafood</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxSixteen"
+              name="recipe_ingredients_tags"
+              value="Fruit"
+            /><label for="checkboxSixteen">Fruit</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxSeven"
+              name="recipe_ingredients_tags"
+              value="Barbecue"
+            /><label for="checkboxSeven">Barbecue</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxEighteen"
+              name="recipe_ingredients_tags"
+              value="Baked"
+            /><label for="checkboxEighteen">Baked</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxEight"
+              name="recipe_ingredients_tags"
+              value="Sweet"
+            /><label for="checkboxEight">Sweet</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxNine"
+              name="recipe_ingredients_tags"
+              value="Bitter"
+            /><label for="checkboxNine">Bitter</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxTen"
+              name="recipe_ingredients_tags"
+              value="Sour"
+            /><label for="checkboxTen">Sour</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxEleven"
+              name="recipe_ingredients_tags"
+              value="Starter"
+            /><label for="checkboxEleven">Starter</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxTwelve"
+              name="recipe_ingredients_tags"
+              value="Main"
+            /><label for="checkboxTwelve">Main</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxThirteen"
+              name="recipe_ingredients_tags"
+              value="Dessert"
+            /><label for="checkboxThirteen">Dessert</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxSeventeen"
+              name="recipe_ingredients_tags"
+              value="Halal"
+            /><label for="checkboxSeventeen">Halal</label></li>
+          <li><input
+              type="checkbox"
+              id="checkboxTwenty"
+              name="recipe_ingredients_tags"
+              value="Gluten free"
+            /><label for="checkboxTwenty">Gluten free</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox21"
+              name="recipe_ingredients_tags"
+              value="Pescatarian"
+            /><label for="checkbox21">Pescatarian</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox22"
+              name="recipe_ingredients_tags"
+              value="Spicy"
+            /><label for="checkbox22">Spicy</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox23"
+              name="recipe_ingredients_tags"
+              value="Chocolate"
+            /><label for="checkbox23">Chocolate</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox24"
+              name="recipe_ingredients_tags"
+              value="Fried"
+            /><label for="checkbox24">Fried</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox25"
+              name="recipe_ingredients_tags"
+              value="Noodles"
+            /><label for="checkbox25">Noodles</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox26"
+              name="recipe_ingredients_tags"
+              value="Healthy"
+            /><label for="checkbox26">Healthy</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox27"
+              name="recipe_ingredients_tags"
+              value="Tasty"
+            /><label for="checkbox27">Tasty</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox28"
+              name="recipe_ingredients_tags"
+              value="Breakfast"
+            /><label for="checkbox28">Breakfast</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox29"
+              name="recipe_ingredients_tags"
+              value="Lunch"
+            /><label for="checkbox29">Lunch</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox30"
+              name="recipe_ingredients_tags"
+              value="Dinner"
+            /><label for="checkbox30">Dinner</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox31"
+              name="recipe_ingredients_tags"
+              value="Piri Piri"
+            /><label for="checkbox31">Piri Piri</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox32"
+              name="recipe_ingredients_tags"
+              value="Chilled"
+            /><label for="checkbox32">Chilled</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox33"
+              name="recipe_ingredients_tags"
+              value="Cold"
+            /><label for="checkbox33">Cold</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox34"
+              name="recipe_ingredients_tags"
+              value="Hot"
+            /><label for="checkbox34">Hot</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox35"
+              name="recipe_ingredients_tags"
+              value="Crispy"
+            /><label for="checkbox35">Crispy</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox36"
+              name="recipe_ingredients_tags"
+              value="Crunchy"
+            /><label for="checkbox36">Crunchy</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox37"
+              name="recipe_ingredients_tags"
+              value="Rice"
+            /><label for="checkbox37">Rice</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox38"
+              name="recipe_ingredients_tags"
+              value="Sushi"
+            /><label for="checkbox38">Sushi</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox39"
+              name="recipe_ingredients_tags"
+              value="Ramen"
+            /><label for="checkbox39">Ramen</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox40"
+              name="recipe_ingredients_tags"
+              value="Lamb"
+            /><label for="checkbox40">Lamb</label></li>
+          <li><input
+              type="checkbox"
+              id="checkbox41"
+              name="recipe_ingredients_tags"
+              value="Ramen"
+            /><label for="checkbox41">Curry</label></li>
+        </ul>
+
+      </div>
       <p class="input-title">RECIPE CUISINE</p>
       <p class="sub-text">What is the recipe cuisine?</p>
-     
+
       <label for="recipe_cuisine">Choose a cuisine</label>
 
       <select name="recipe_cuisine" id="cuisine-options">
+        <option name="recipe_cuisine" value="Homemade">Homemade</option>
         <option name="recipe_cuisine" value="Chinese">Chinese</option>
         <option name="recipe_cuisine" value="Italian">Italian</option>
         <option name="recipe_cuisine" value="Spanish">Spanish</option>
@@ -133,14 +363,9 @@
         <option name="recipe_cuisine" value="Indian">Indian</option>
         <option name="recipe_cuisine" value="Asian">Asian</option>
         <option name="recipe_cuisine" value="French">French</option>
-        <option name="recipe_cuisine" value="European">European</option>
+        <option name="recipe_cuisine" value="Mexican">Mexican</option>
         <option name="recipe_cuisine" value="Middle Eastern">Middle Eastern</option>
       </select>
-
-
- 
-
-{{!-- ------------------------------------------ --}}
 
       <p class="input-title">INGREDIENTS</p>
       <p class="sub-text">Remember to add the amount and unit.</p>
