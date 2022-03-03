@@ -29,8 +29,18 @@
     <div class="single-recipe-serves"><h2 class="recipe-detail-container"><i
           class="fa-solid fa-utensils single-clock"
         ></i>serves: {{recipe_serves}}</h2></div>
+        
   </section>
-
+  {{#if recipe_jam}}
+  <section class="recipe-jam">
+   <h2 class="jam-title">{{user.first_name}}'s Kitchen Jam</h2>
+  <a class="recipe-jam-link" href={{recipe_jam}} target="_blank">
+          <button class="fa-solid fa-circle-play fa-xl"></button>
+         </a>
+          </section>
+          {{/if}}
+        
+  
   <section class="single-recipe-summary-container" id="summary-scroll">
     <h2 class="single-recipe-subheader">Summary</h2>
     <p class="single-recipe-summary">"{{recipe_summary}}"</p>
