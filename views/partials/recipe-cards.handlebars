@@ -27,11 +27,9 @@
   {{! tag holder  ------------------------------------------------}}
   <div class="recipe-card-tag-holder">
     <ul class="recipe-tag-list-holder">
-      <li class="recipe-tag-list-item"> Italian</li>
-      <li class="recipe-tag-list-item"> Italian</li>
-      <li class="recipe-tag-list-item"> Italian</li>
-      <li class="recipe-tag-list-item"> Italian</li>
-      <li class="recipe-tag-list-item"> Italian</li>
+      {{#each recipe_ingredients_tags}}
+      <li class="recipe-tag-list-item"> {{this}}</li>
+      {{/each}}
     </ul>
   </div>
   {{! card body ---------------------------------------------------}}
@@ -44,10 +42,10 @@
       <span class="timer-icon"><i class="fa-solid fa-clock"></i><span
           class="timer-icon-text"
         >
-          {{recipe_cooking_time_hours}}
-          Hours
-          {{recipe_cooking_time_minutes}}
-          mins</span></span>
+          {{#if recipe_cooking_time_hours}}{{recipe_cooking_time_hours}}
+          Hours{{/if}}
+          {{#if recipe_cooking_time_minutes}}{{recipe_cooking_time_minutes}}
+          mins{{/if}}</span></span>
     </div>
     {{! title }}
     <h3 class="recipe-card-title"><a
@@ -55,8 +53,7 @@
         href="/recipe/{{id}}"
       >{{recipe_title}}</a></h3>
     {{! bio }}
-    <p class="recipe-card-bio">{{recipe_summary}}
-      a quick easy time a quick easy time a</p>
+    <p class="recipe-card-bio">{{recipe_summary}}</p>
 
     <h3 class="recipe-card-comments"><button
         class="recipe-card-title-link trigger"

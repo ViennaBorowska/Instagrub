@@ -24,8 +24,8 @@
   <section class="single-recipe-details">
     <div class="single-recipe-cooking-time"><h2
         class="recipe-detail-container"
-      ><i class="fa-solid fa-clock single-clock"></i>Cooking time: {{recipe_cooking_time_hours}} hrs {{recipe_cooking_time_minutes}}
-        mins</h2></div>
+      ><i class="fa-solid fa-clock single-clock"></i>Cooking time: {{#if recipe_cooking_time_hours}}{{recipe_cooking_time_hours}} hrs {{/if}}{{#if recipe_cooking_time_minutes}}{{recipe_cooking_time_minutes}}
+        mins{{/if}}</h2></div>
     <div class="single-recipe-serves"><h2 class="recipe-detail-container"><i
           class="fa-solid fa-utensils single-clock"
         ></i>serves: {{recipe_serves}}</h2></div>
@@ -58,11 +58,13 @@
     </div>
   </section>
 
-  <section>
-  {{#if logged_in}}
+  <section class="recipe-buttons">
+  
+  {{!-- {{#if isUserId}} --}}
   <button class="btn update-recipe-btn" id="update-recipe-btn" type="click"> <a href="/edit-recipe/{{id}}">Update</a> </button>
   <button class="btn delete-recipe-btn" id="delete-recipe-btn" type="click" > Delete </button>
-  {{/if}}
+  {{!-- {{/if}} --}}
+  
 </section> 
 
 
@@ -81,5 +83,6 @@
 <script src="/js/delete-recipe.js"></script>
 <script src="/js/comment.js"></script>
 <script src="/js/update-recipe-likes.js"></script>
+<script src="/js/single-recipe.js"></script>
 
  
