@@ -1,6 +1,6 @@
 <section class="dashboard-holder">
   <article class="recommended-options">
-    <h1>hello</h1>
+    <h1>Hello {{ user.username }}</h1>
   </article>
   {{#each recipeCards as |recipeCard| }}
   {{> recipe-cards recipeCard}}

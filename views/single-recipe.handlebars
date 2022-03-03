@@ -18,7 +18,7 @@
     <a class="single-recipe-author-link" href="/user/{{user_id}}"><h2
         class="single-recipe-author"
       >{{user.first_name}} {{user.last_name}}</h2></a>
-      <div class="single-recipe-button-container"><button class="recipe-like single-recipe-nav-item"><i class="fas fa-heart single-recipe-heart-icon"></i></button>0 LIKES</div>
+      <div class="single-recipe-button-container"><button class="recipe-like single-recipe-nav-item"><i class="fas fa-heart single-recipe-heart-icon"></i></button> {{recipe_likes}} LIKES</div>
   </div>
 
   <section class="single-recipe-details">
@@ -61,10 +61,10 @@
 
   <section class="recipe-buttons">
   
-  {{!-- {{#if isUserId}} --}}
+   {{!-- {{#if isUserId }} 
   <button class="btn update-recipe-btn" id="update-recipe-btn" type="click"> <a href="/edit-recipe/{{id}}">Update</a> </button>
   <button class="btn delete-recipe-btn" id="delete-recipe-btn" type="click" > Delete </button>
-  {{!-- {{/if}} --}}
+  {{/if}}  --}}
   
 </section> 
 
@@ -82,12 +82,12 @@
   </section>
 
   </section>
+  {{#if isUserId}}
   <section class="single-recipe-footer">
-  {{#if logged_in}}
   <button class="single-recipe-update-recipe-btn" id="update-recipe-btn" type="click"> <a class="srubl" href="/edit-recipe/{{id}}">Update Recipe</a> </button>
   <button class="single-recipe-delete-recipe-btn" id="delete-recipe-btn" type="click" >Delete Recipe </button>
-  {{/if}}
   </section>
+  {{/if}}
 
 <script src="/js/delete-recipe.js"></script>
 <script src="/js/comment.js"></script>

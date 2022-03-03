@@ -147,6 +147,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           "recipe_ingredients",
           "recipe_method",
           "recipe_image",
+          "recipe_likes",
           "user_id",
         ],
         include: [
