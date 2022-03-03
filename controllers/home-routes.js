@@ -53,7 +53,7 @@ router.get("/feed", withAuth, async (req, res) => {
           {
             model: Comments,
             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-            include: { model: User, attributes: ["username"] },
+            include: { model: User, attributes: ["username", "user_image"] },
           },
         ],
       })
@@ -164,7 +164,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           {
             model: Comments,
             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-            include: { model: User, attributes: ["username"] },
+            include: { model: User, attributes: ["username", "user_image"] },
           },
         ],
       })
