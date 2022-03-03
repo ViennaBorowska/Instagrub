@@ -54,6 +54,94 @@
         id="add-recipe-summary"
         name="recipe_summary"
       >{{this.recipe_summary}}</textarea>
+
+{{!-- ----------------------------- --}}
+
+<p class="input-title">RECIPE DIET</p>
+      <p class="sub-text">Select your recipes dietary preferences.</p>
+      <label for="recipe_diet">Choose a dietary requirement</label>
+      <select name="recipe_diet" id="diet-options">
+        <option name="recipe_diet" value="Vegan">Vegan</option>
+        <option name="recipe_diet" value="Vegetarian">Vegetarian</option>
+        <option name="recipe_diet" value="Halal">Halal</option>
+        <option name="recipe_diet" value="Pescatarian">Pescatarian</option>
+        <option name="recipe_diet" value="Gluten free">Gluten free</option>
+        <option name="recipe_diet" value="Lactose free">Lactose free</option>
+        <option name="recipe_diet" value="Shellfish">Shellfish</option>
+      </select>
+
+      <p class="input-title">RECIPE SPICE</p>
+      <p class="sub-text">Check the box if the recipe is spicy.</p>
+      <input type="checkbox" id="spice" name="recipe_spice" value="Spice" />
+      <label for="spice">Spicy</label>
+      <p class="input-title">RECIPE MAIN INGREDIENTS</p>
+      <p class="sub-text">What are the main ingredients of the recipe?</p>
+      <input
+        type="checkbox"
+        id="beef"
+        name="recipe_ingredients_tags"
+        value="Beef"
+      />
+      <label for="beef">Beef</label>
+      <input
+        type="checkbox"
+        id="vegetables"
+        name="recipe_ingredients_tags"
+        value="Vegetables"
+      />
+      <label for="vegetables">Vegetables</label>
+      <input
+        type="checkbox"
+        id="pasta"
+        name="recipe_ingredients_tags"
+        value="Pasta"
+      />
+      <label for="pasta">Pasta</label>
+      <input
+        type="checkbox"
+        id="poultry"
+        name="recipe_ingredients_tags"
+        value="Poultry"
+      />
+      <label for="poultry">Poultry</label>
+      <input
+        type="checkbox"
+        id="pork"
+        name="recipe_ingredients_tags"
+        value="Pork"
+      />
+      <label for="pork">Pork</label>
+      <input
+        type="checkbox"
+        id="seafood"
+        name="recipe_ingredients_tags"
+        value="Seafood"
+      />
+      <label for="seafood">Seafood</label>
+      <p class="input-title">RECIPE CUISINE</p>
+      <p class="sub-text">What is the recipe cuisine?</p>
+     
+      <label for="recipe_cuisine">Choose a cuisine</label>
+
+      <select name="recipe_cuisine" id="cuisine-options">
+        <option name="recipe_cuisine" value="Chinese">Chinese</option>
+        <option name="recipe_cuisine" value="Italian">Italian</option>
+        <option name="recipe_cuisine" value="Spanish">Spanish</option>
+        <option name="recipe_cuisine" value="Portuguese">Portuguese</option>
+        <option name="recipe_cuisine" value="American">American</option>
+        <option name="recipe_cuisine" value="English">English</option>
+        <option name="recipe_cuisine" value="Indian">Indian</option>
+        <option name="recipe_cuisine" value="Asian">Asian</option>
+        <option name="recipe_cuisine" value="French">French</option>
+        <option name="recipe_cuisine" value="European">European</option>
+        <option name="recipe_cuisine" value="Middle Eastern">Middle Eastern</option>
+      </select>
+
+
+ 
+
+{{!-- ------------------------------------------ --}}
+
       <p class="input-title">INGREDIENTS</p>
       <p class="sub-text">Remember to add the amount and unit.</p>
       <div class="recipe-ingredients-container">
