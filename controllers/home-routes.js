@@ -137,7 +137,7 @@ router.get("/user/:id", withAuth, async (req, res) => {
   }
 });
 
-// Get Single Recipe Page
+/* -----Single Recipe Page -----*/
 
 router.get("/recipe/:id", withAuth, async (req, res) => {
   try {
@@ -171,10 +171,8 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    // res.sendStatus(500).send(err);
   }
 });
-// Delete single recipe
 
 /* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {
