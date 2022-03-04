@@ -29,8 +29,18 @@
     <div class="single-recipe-serves"><h2 class="recipe-detail-container"><i
           class="fa-solid fa-utensils single-clock"
         ></i>serves: {{recipe_serves}}</h2></div>
+        
   </section>
-
+  {{#if recipe_jam}}
+  <section class="recipe-jam">
+   <h2 class="jam-title">{{user.first_name}}'s Kitchen Jam</h2>
+  <a class="recipe-jam-link" href={{recipe_jam}} target="_blank">
+          <button class="fa-solid fa-circle-play fa-xl"></button>
+         </a>
+          </section>
+          {{/if}}
+        
+  
   <section class="single-recipe-summary-container" id="summary-scroll">
     <h2 class="single-recipe-subheader">Summary</h2>
     <p class="single-recipe-summary">"{{recipe_summary}}"</p>
@@ -58,17 +68,6 @@
     </div>
   </section>
 
-
-  <section class="recipe-buttons">
-  
-   {{!-- {{#if isUserId }} 
-  <button class="btn update-recipe-btn" id="update-recipe-btn" type="click"> <a href="/edit-recipe/{{id}}">Update</a> </button>
-  <button class="btn delete-recipe-btn" id="delete-recipe-btn" type="click" > Delete </button>
-  {{/if}}  --}}
-  
-</section> 
-
-
   <section class="single-recipe-comments-container">
       <h2 class="single-recipe-subheader comment-subheader">Comments</h2>
 {{#each comments as |comment|}}
@@ -80,18 +79,22 @@
 <button class="single-recipe-comment-button" id="single-recipe-comment-button"><i class="fa-solid fa-comment"></i>comment</button>
 </div>
   </section>
+ </section>
+ 
+ 
+ 
 
-  </section>
-  {{!-- {{#if isUserId}} --}}
+
+  {{#if isMyRecipe}}
   <section class="single-recipe-footer">
   <button class="single-recipe-update-recipe-btn" id="update-recipe-btn" type="click"> <a class="srubl" href="/edit-recipe/{{id}}">Update Recipe</a> </button>
   <button class="single-recipe-delete-recipe-btn" id="delete-recipe-btn" type="click" >Delete Recipe </button>
   </section>
-  {{!-- {{/if}} --}}
+  <script src="/js/delete-recipe.js"></script>
+  {{/if}}
 
-<script src="/js/delete-recipe.js"></script>
+
 <script src="/js/comment.js"></script>
 <script src="/js/update-recipe-likes.js"></script>
-<script src="/js/single-recipe.js"></script>
 
  

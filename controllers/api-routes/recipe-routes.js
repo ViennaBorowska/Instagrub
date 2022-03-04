@@ -58,6 +58,7 @@ router.post("/add-recipe", upload, async (req, res) => {
       recipe_cuisine: req.body.recipe_cuisine,
       recipe_likes: 0,
       recipe_image: req.file.path,
+      recipe_jam: req.body.recipe_jam,
       user_id: req.session.user_id,
     });
     res.status(200).json(newRecipe);

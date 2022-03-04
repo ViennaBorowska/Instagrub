@@ -122,6 +122,42 @@
   padding-left: 5px;
 }
 
+.recipe-jam h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
+.recipe-jam {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e1ddd8;
+  padding-bottom: 25px;
+}
+
+.recipe-jam button {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 15px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.recipe-jam a {
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
 .single-recipe-summary-container {
   display: flex;
   align-items: center;
@@ -409,6 +445,12 @@
       padding-top: 5px;
       padding-bottom: 5px;
     }
+    .recipe-jam {
+      flex-direction: column;
+    }
 
+    .recipe-jam a {
+      margin-top: 10px;
+    }
     
   }

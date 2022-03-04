@@ -31,6 +31,8 @@ const recipeData = [
     recipe_fish: "Fish",
     recipe_ingredients_tags: ["Pasta", "Spicy", "Tasty"],
     recipe_cuisine: "Italian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=OnFlx2Lnr9Q&ab_channel=NMCatalogue",
     user_id: 1,
   },
   {
@@ -68,6 +70,8 @@ const recipeData = [
     recipe_fish: "Fish",
     recipe_ingredients_tags: ["Seafood", "Main", "Pescatarian", "Healthy"],
     recipe_cuisine: "Indian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=2v2CNGiK7sQ&ab_channel=HilarySummers-Topic",
     user_id: 2,
   },
   {
@@ -102,7 +106,10 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_shellfish: "Shellfish",
     recipe_ingredients_tags: ["Seafood", "Tasty", "Hot", "Pork"],
-    recipe_cuisine:"Chinese",
+    recipe_cuisine: "Chinese",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=rGh97zsBfWk&ab_channel=stelioscockey",
+
     user_id: 3,
   },
   {
@@ -134,7 +141,7 @@ const recipeData = [
     recipe_shellfish: "Shellfish",
     recipe_ingredients_tags: ["Seafood", "Noodles", "Hot", "Pork"],
     recipe_cuisine: "Asian",
-    user_id: 4
+    user_id: 4,
   },
   {
     recipe_title: "Classic Butter Chicken",
@@ -189,6 +196,8 @@ const recipeData = [
     recipe_spice: "Spicy",
     recipe_ingredients_tags: ["Chicken", "Tasty", "Main", "Curry"],
     recipe_cuisine: "Indian",
+    recipe_jam:
+      "https://www.youtube.com/watch?v=IBmj7_TiLkM&ab_channel=Monkey-Topic",
     user_id: 5,
   },
   {
@@ -273,8 +282,10 @@ const recipeData = [
     ],
     recipe_image: "uploads/mixmatch-steak.jpg",
     recipe_likes: 1,
-    recipe_ingredients_tags: ["Steak", "Beef", "Main",],
+    recipe_ingredients_tags: ["Steak", "Beef", "Main"],
     recipe_cuisine: "American",
+    recipe_jam:
+      "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
     user_id: 8,
   },
   {
@@ -321,10 +332,44 @@ const recipeData = [
     recipe_ingredients_tags: ["Dessert", "Baked", "Sweet", "Chocolate"],
     recipe_cuisine: "English",
     user_id: 7,
+    recipe_jam:
+      "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
+  },
+  {
+    recipe_title: "Veggie Tacos",
+    recipe_cooking_time_hours: 1,
+    recipe_cooking_time_minutes: 0,
+    recipe_serves: 8,
+    recipe_summary:
+      "Quick, easy and super tasty tacos filled to the brim with fresh vegetables and some spice!",
+    recipe_ingredients: [
+      "350g of Cauliflower",
+      "435g of chickpeas",
+      "1 Lime",
+      "1 Tsp of honey",
+      "30mls Olive Oil",
+      "5 Chillies",
+      "2 tsp Paprika",
+      "3 Cloves of garlic",
+      "1 Advocado", 
+      "Salt and pepper to taste"
+    ],
+    recipe_method: [
+     "Combine all of the Slaw ingredients in a non-metal bowl and set aside. Stir every once in a while.",
+     "Preheat oven to 400 degrees F (204 C). Toss together all Cauliflower Filling ingredients. Lay on a parchment-lined baking sheet and bake for 30 minutes, or until slightly browned and crisp.",
+     "Meanwhile, combine all Sauce ingredients in a food processor until smooth.",
+     "Spoon filling evenly onto 8 tortillas. Top with a heaping spoonful of slaw and avocado sauce. Serve immediately or store separately until ready to eat."
+    ],
+    recipe_image: "uploads/veggie-tacos.jpg",
+    recipe_likes: 10,
+    recipe_spice: "Spicy",
+    recipe_veg: "Veg",
+    recipe_ingredients_tags: ["Spicy", "Vegetarian", "Healthy",],
+    recipe_cuisine: "Mexican",
+    user_id: 2,
   },
 ];
 
 const seedRecipe = () => Recipe.bulkCreate(recipeData);
 
 module.exports = seedRecipe;
-
