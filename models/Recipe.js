@@ -73,6 +73,10 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    recipe_jam: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

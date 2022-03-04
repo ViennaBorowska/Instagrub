@@ -74,10 +74,8 @@
       <span class="timer-icon"><i class="fa-solid fa-clock"></i><span
           class="timer-icon-text"
         >
-          {{recipe_cooking_time_hours}}
-          Hours
-          {{recipe_cooking_time_minutes}}
-          mins</span></span>
+          {{#if recipe_cooking_time_hours}}{{recipe_cooking_time_hours}} hrs {{/if}}{{#if recipe_cooking_time_minutes}}{{recipe_cooking_time_minutes}}
+        mins{{/if}}</span></span>
     </div>
     {{! title }}
     <h3 class="recipe-card-title"><a

@@ -31,7 +31,6 @@ const userData = [
     first_name: "Sampreeti",
     last_name: "Das",
     user_bio: "I really like Indian food. Fish is my favourite food.",
-    user_image: "sample-profile.jpg",
     user_image: "user4.jpg",
   },
   {
@@ -40,8 +39,7 @@ const userData = [
     first_name: "Delia",
     last_name: "Smith",
     user_bio: "I really like cakes. Sugar is my favourite food.",
-    user_image: "sample-profile.jpg",
-    user_image: "user4.jpg",
+    user_image: "delia.jpg",
   },
   {
     username: "Gordon",
@@ -49,8 +47,7 @@ const userData = [
     first_name: "Gordon",
     last_name: "Ramsay",
     user_bio: "I really like pies. Pastry is my favourite food.",
-    user_image: "sample-profile.jpg",
-    user_image: "user4.jpg",
+    user_image: "gordon.jpg",
   },
   {
     username: "Nigella",
@@ -59,7 +56,7 @@ const userData = [
     last_name: "Lawson",
     user_bio: "I really like rich dishes. Chocolate is my favourite food.",
     user_image: "sample-profile.jpg",
-    user_image: "user4.jpg",
+    user_image: "nigella.jpg",
   },
   {
     username: "Jamie",
@@ -68,7 +65,7 @@ const userData = [
     last_name: "Oliver",
     user_bio: "I really like salads. Veg is my favourite food.",
     user_image: "sample-profile.jpg",
-    user_image: "user4.jpg",
+    user_image: "jamie.jpg",
   },
 ];
 

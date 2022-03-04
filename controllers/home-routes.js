@@ -137,28 +137,50 @@ router.get("/user/:id", withAuth, async (req, res) => {
   }
 });
 
+/* -----Single Recipe Page -----*/
+
+// router.get("/recipe/:id", withAuth, async (req, res) => {
+//   try {
+//     const { logged_in, user } = req.session;
+//     const recipeFromDb = await Recipe.findOne({
+//       where: { id: req.params.id },
+//       include: [
+//           {
+//             model: User,
+//             attributes: ["id", "username", "first_name", "last_name"],
+//           },
+
+//           {
+//             model: Comments,
+//             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+//             include: { model: User, attributes: ["username", "user_image"] },
+//           },
+//         ],
+//     });
+
+//   const recipe = recipeFromDb.get({ plain: true });
+
+//   const isMyRecipe = logged_in && user.id === recipe.user_id;
+
+//     return res.render("single-recipe", {
+//       ...recipe,
+//       logged_in: req.session.logged_in,
+//       isMyRecipe: isMyRecipe,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
+
 router.get("/recipe/:id", withAuth, async (req, res) => {
-  try {
-    const recipe = (
-      await Recipe.findOne({
-        where: { id: req.params.id },
-        attributes: [
-          "id",
-          "recipe_title",
-          "recipe_cooking_time_hours",
-          "recipe_cooking_time_minutes",
-          "recipe_serves",
-          "recipe_summary",
-          "recipe_ingredients",
-          "recipe_method",
-          "recipe_image",
-          "recipe_likes",
-          "user_id",
-        ],
-        include: [
+  // get logged in user info from session
+  const { user_id } = req.session;
+  const { id } = req.params;
+  const recipeFromDB = await Recipe.findByPk(id, {
+    include: [
           {
             model: User,
-            attributes: ["username", "first_name", "last_name"],
+            attributes: ["id", "username", "first_name", "last_name"],
           },
 
           {
@@ -167,20 +189,19 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
             include: { model: User, attributes: ["username", "user_image"] },
           },
         ],
-      })
-    ).get({ plain: true });
+  });
 
-    console.log(recipe);
-    res.render("single-recipe", {
+
+  const recipe = recipeFromDB.get({ plain: true });
+
+  const isMyRecipe = user_id === recipe.user_id;
+
+  return res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
+      isMyRecipe: isMyRecipe,
     });
-  } catch (err) {
-    res.status(500).send(err);
-  }
 });
-
-// Delete single recipe
 
 /* -----Edit Profile Page -----*/
 router.get("/edit-profile", withAuth, async (req, res) => {
