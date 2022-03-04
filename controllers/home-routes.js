@@ -139,11 +139,45 @@ router.get("/user/:id", withAuth, async (req, res) => {
 
 /* -----Single Recipe Page -----*/
 
+// router.get("/recipe/:id", withAuth, async (req, res) => {
+//   try {
+//     const { logged_in, user } = req.session;
+//     const recipeFromDb = await Recipe.findOne({
+//       where: { id: req.params.id },
+//       include: [
+//           {
+//             model: User,
+//             attributes: ["id", "username", "first_name", "last_name"],
+//           },
+
+//           {
+//             model: Comments,
+//             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
+//             include: { model: User, attributes: ["username", "user_image"] },
+//           },
+//         ],
+//     });
+
+//   const recipe = recipeFromDb.get({ plain: true });
+
+//   const isMyRecipe = logged_in && user.id === recipe.user_id;
+
+//     return res.render("single-recipe", {
+//       ...recipe,
+//       logged_in: req.session.logged_in,
+//       isMyRecipe: isMyRecipe,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
+
 router.get("/recipe/:id", withAuth, async (req, res) => {
-  try {
-    const recipeFromDb = await Recipe.findOne({
-      where: { id: req.params.id },
-      include: [
+  // get logged in user info from session
+  const { user_id } = req.session;
+  const { id } = req.params;
+  const recipeFromDB = await Recipe.findByPk(id, {
+    include: [
           {
             model: User,
             attributes: ["id", "username", "first_name", "last_name"],
@@ -155,23 +189,18 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
             include: { model: User, attributes: ["username", "user_image"] },
           },
         ],
-    });
+  });
 
-    const recipe = recipeFromDb.get({ plain: true });
 
-    let sameUser = false;
-    if (req.params.id == req.session.user_id) {
-      sameUser = true;
-    }
+  const recipe = recipeFromDB.get({ plain: true });
 
-    return res.render("single-recipe", {
+  const isMyRecipe = user_id === recipe.user_id;
+
+  return res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
-      sameUser: sameUser,
+      isMyRecipe: isMyRecipe,
     });
-  } catch (err) {
-    console.log(err);
-  }
 });
 
 /* -----Edit Profile Page -----*/
