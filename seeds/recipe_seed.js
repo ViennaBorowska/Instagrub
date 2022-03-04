@@ -335,6 +335,39 @@ const recipeData = [
     recipe_jam:
       "https://open.spotify.com/track/240PbILl6Wb21Anv60rMaI?si=76dbe5808b9046c3",
   },
+  {
+    recipe_title: "Veggie Tacos",
+    recipe_cooking_time_hours: 1,
+    recipe_cooking_time_minutes: 0,
+    recipe_serves: 8,
+    recipe_summary:
+      "Quick, easy and super tasty tacos filled to the brim with fresh vegetables and some spice!",
+    recipe_ingredients: [
+      "350g of Cauliflower",
+      "435g of chickpeas",
+      "1 Lime",
+      "1 Tsp of honey",
+      "30mls Olive Oil",
+      "5 Chillies",
+      "2 tsp Paprika",
+      "3 Cloves of garlic",
+      "1 Advocado", 
+      "Salt and pepper to taste"
+    ],
+    recipe_method: [
+     "Combine all of the Slaw ingredients in a non-metal bowl and set aside. Stir every once in a while.",
+     "Preheat oven to 400 degrees F (204 C). Toss together all Cauliflower Filling ingredients. Lay on a parchment-lined baking sheet and bake for 30 minutes, or until slightly browned and crisp.",
+     "Meanwhile, combine all Sauce ingredients in a food processor until smooth.",
+     "Spoon filling evenly onto 8 tortillas. Top with a heaping spoonful of slaw and avocado sauce. Serve immediately or store separately until ready to eat."
+    ],
+    recipe_image: "uploads/veggie-tacos.jpg",
+    recipe_likes: 10,
+    recipe_spice: "Spicy",
+    recipe_veg: "Veg",
+    recipe_ingredients_tags: ["Spicy", "Vegetarian", "Healthy",],
+    recipe_cuisine: "Mexican",
+    user_id: 2,
+  },
 ];
 
 const seedRecipe = () => Recipe.bulkCreate(recipeData);

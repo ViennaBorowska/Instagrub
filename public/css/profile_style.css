@@ -91,6 +91,7 @@
   width: 150px;
   height: 150px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .profile__middle {
@@ -371,10 +372,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .profile__middle p {
-    /* margin-right: 20px; */
   }
 
   .profile__right {
