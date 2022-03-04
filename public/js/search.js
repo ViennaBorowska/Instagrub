@@ -17,7 +17,7 @@ const searchHandler = async (event) => {
         .then((recipeCards) => {
           const template = `<section class="dashboard-holder" id="dashboard-holder">
                               <article class="recommended-options">
-                                <h1>Hello {{ user.username }}</h1>
+                                <h1>Search Results</h1>
                               </article>
                             
                               {{#each recipeCards as |recipeCard| }}
@@ -84,13 +84,6 @@ const searchHandler = async (event) => {
                                         class="recipe-card-title-link"
                                         href="/recipe/{{id}}"
                                       >{{recipe_title}}</a></h3>
-                                    <p class="recipe-card-bio">{{recipe_summary}} </p>
-
-                                    <h3 class="recipe-card-comments"><button
-                                        class="recipe-card-title-link trigger"
-                                        href="/recipe/{{id}}"
-                                      >{{comments.length}} Comments</button></h3>
-
                                   </div>
 
                                 </article>
