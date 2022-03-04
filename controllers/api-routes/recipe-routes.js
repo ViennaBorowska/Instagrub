@@ -138,10 +138,6 @@ router.post("/search", async (req, res) => {
       })
     ).map((recipeCard) => recipeCard.get({ plain: true }));
     res.status(200).json(recipeCards);
-    // res.render("searchresult", {
-    //   recipeCards,
-    //   logged_in: req.session.logged_in,
-    // });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
