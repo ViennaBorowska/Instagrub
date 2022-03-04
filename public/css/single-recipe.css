@@ -445,6 +445,8 @@
       padding-top: 5px;
       padding-bottom: 5px;
     }
-
+    .recipe-jam {
+      flex-direction: column;
+    }
     
   }
