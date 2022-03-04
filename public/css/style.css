@@ -75,12 +75,9 @@
     padding: 10px;
     height: 30px;
     border: none;
-    cursor: pointer;
   }
 
-  .search-icon-holder:hover {
-    background-color: rgb(138, 138, 138);
-  }
+  
 
   .nav-search-holder {
     display: flex;
