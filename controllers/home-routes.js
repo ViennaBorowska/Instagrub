@@ -137,15 +137,16 @@ router.get("/user/:id", withAuth, async (req, res) => {
   }
 });
 
+// Get Single Recipe Page
+
 router.get("/recipe/:id", withAuth, async (req, res) => {
   try {
-    const recipe = (
-      await Recipe.findOne({
-        where: { id: req.params.id },
-        include: [
+    const recipeFromDb = await Recipe.findOne({
+      where: { id: req.params.id },
+      include: [
           {
             model: User,
-            attributes: ["username", "first_name", "last_name"],
+            attributes: ["id", "username", "first_name", "last_name"],
           },
 
           {
@@ -154,19 +155,25 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
             include: { model: User, attributes: ["username", "user_image"] },
           },
         ],
-      })
-    ).get({ plain: true });
+    });
 
-    console.log(recipe);
-    res.render("single-recipe", {
+    const recipe = recipeFromDb.get({ plain: true });
+
+    let sameUser = false;
+    if (req.params.id == req.session.user_id) {
+      sameUser = true;
+    }
+
+    return res.render("single-recipe", {
       ...recipe,
       logged_in: req.session.logged_in,
+      sameUser: sameUser,
     });
   } catch (err) {
-    res.status(500).send(err);
+    console.log(err);
+    // res.sendStatus(500).send(err);
   }
 });
-
 // Delete single recipe
 
 /* -----Edit Profile Page -----*/
